@@ -71,7 +71,11 @@
                die("Fehler beim buchen.");
            }
    
-           echo"<h2> Buchung erfolgreich!</h2>";
+           echo"<h2> Vielen Dank für ihre Buchung.<br>Wir freuen uns sehr dass sie sich für einen Urlaub
+           bei Dream Beach Retreat entschieden haben.</h2>";
+           echo"Bitte kontrollieren Sie nochamls folgende Daten auf ihre Richtigkeit.<br>Dies ist ein essentieler
+           Schritt für die reibungslose Abwicklung ihrer Urlaubsbuchung:";
+           
    
         }
     } else {
