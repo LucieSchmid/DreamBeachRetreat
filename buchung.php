@@ -70,12 +70,23 @@
                    echo $e->getMessage();
                die("Fehler beim buchen.");
            }
-   
-           echo"<h2> Vielen Dank für ihre Buchung.<br>Wir freuen uns sehr dass sie sich für einen Urlaub
+           //Anfang des Daten kontrollieren
+           if(isset($_POST['bestaetigen'])){
+                if(//emptyabfrage
+                    ){
+                        //Wenn ja bitte auwählen
+                }else{
+                    //alles perfekt abgewickelt
+                }
+           }
+           else{
+            //Formular Nr.: 2
+           echo"<h2> Vielen Dank für ihre Buchung!<br>Wir freuen uns sehr dass sie sich für einen Urlaub
            bei Dream Beach Retreat entschieden haben.</h2>";
            echo"Bitte kontrollieren Sie nochamls folgende Daten auf ihre Richtigkeit.<br>Dies ist ein essentieler
            Schritt für die reibungslose Abwicklung ihrer Urlaubsbuchung:";
-           
+           }
+
    
         }
     } else {
