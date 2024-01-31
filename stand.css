@@ -1,0 +1,19 @@
+label{
+    font-weight: bold;
+    width: 300px;
+}
+
+body{
+    background-color: rgb(201,233,247);
+}
+
+h1{
+    color: rgb(57, 166, 229);
+
+}
+
+.runde-ecken {
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px
+}
