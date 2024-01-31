@@ -44,6 +44,35 @@
 
             //DB Verbindung
             require_once('db.php');
+
+            //SQL-Statement aufbauen
+            try{   
+                $statement = $pdo->prepare("INSERT INTO buchung(nachname, vorname, anschrift, ort, telefon, wieAlt, zimmer,
+                personenProZimmer,anreise, abreise, verpflegung) 
+                VALUES (:nachname, :vorname, :anschrift, :ort, :telefon, :wieAlt, :zimmer, :personenProZimmer, :anreise, :abreise, :verpflegung)");
+                //alle PLatzhalter mit Werten belegen (binden)
+                $statement->bindParam(":nachname", $nachname);
+                $statement->bindParam(":vorname", $vorname);
+                $statement->bindParam(":anschrift", $anschrift);
+                $statement->bindParam(":ort", $ort);
+                $statement->bindParam(":telefon", $tel);
+                $statement->bindParam(":wieAlt", $alter);
+                $statement->bindParam(":zimmer", $zimmerAnz);
+                $statement->bindParam(":personenProZimmer", $personenAnz);
+                $statement->bindParam(":anreise", $anreise);
+                $statement->bindParam(":abreise", $abreise);
+                $statement->bindParam(":verpflegung", $verpflegung);
+
+                //Statement ausführen
+               $statement-> execute();
+
+               }catch(PDOException $e){
+                   echo $e->getMessage();
+               die("Fehler beim buchen.");
+           }
+   
+           echo"<h2> Buchung erfolgreich!</h2>";
+   
         }
     } else {
     ?>
