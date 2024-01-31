@@ -1,0 +1,17 @@
+body{
+    background-image: url(images/aussen.jpg);
+}
+
+
+.hintergrund {
+    background-color: rgba(201, 233, 247, 0.719);
+}
+
+.ueberschriftHintergrund {
+    background-color: rgb(201, 233, 247);
+    padding: 5px;
+}
+
+header{
+    position: relative;
+}
