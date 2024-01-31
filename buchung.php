@@ -42,7 +42,16 @@
             $anreise = trim(htmlspecialchars($_POST['anreiseDatum'])) . " " . trim(htmlspecialchars($_POST['anreiseZeit']));
             $abreise = trim(htmlspecialchars($_POST['abreiseDatum'])) . " " . trim(htmlspecialchars($_POST['abreiseZeit']));
 
-            //DB Verbindung
+            //Anfang des Daten kontrollieren
+           if(isset($_POST['bestaetigen'])){
+            if(empty($_POST['sicher'])){
+                    echo"Bitte lassen Sie uns über die Richtigkeit ihrer Daten wissen";
+            }else{
+                $sicher=$_POST['sicher'];
+                if($sicher == "nein"){
+                    echo"Lassen Sie uns wissen welche Informationen falsch sind.";
+                }else{
+                    //DB Verbindung
             require_once('db.php');
 
             //SQL-Statement aufbauen
@@ -70,24 +79,38 @@
                    echo $e->getMessage();
                die("Fehler beim buchen.");
            }
-           //Anfang des Daten kontrollieren
-           if(isset($_POST['bestaetigen'])){
-                if(//emptyabfrage
-                    ){
-                        //Wenn ja bitte auwählen
-                }else{
-                    //alles perfekt abgewickelt
                 }
-           }
-           else{
-            //Formular Nr.: 2
-           echo"<h2> Vielen Dank für ihre Buchung!<br>Wir freuen uns sehr dass sie sich für einen Urlaub
-           bei Dream Beach Retreat entschieden haben.</h2>";
-           echo"Bitte kontrollieren Sie nochamls folgende Daten auf ihre Richtigkeit.<br>Dies ist ein essentieler
-           Schritt für die reibungslose Abwicklung ihrer Urlaubsbuchung:";
-           }
-
-   
+            }
+       } else{
+                ?>
+            <form  method="post">
+            <h2> Vielen Dank für ihre Buchung!<br>Wir freuen uns sehr dass sie sich für einen Urlaub
+            bei Dream Beach Retreat entschieden haben.</h2>
+            Bitte kontrollieren Sie nochamls folgende Daten auf ihre Richtigkeit.<br>Dies ist ein essentieler
+            Schritt für die reibungslose Abwicklung ihrer Urlaubsbuchung:
+            <?php
+            echo"Ihr Zuname lautet: <b>$nachname</b><br>";
+            echo"Ihr Vorname lautet: <b>$vorname</b><br>";
+            echo"Ihre Anschrift lautet: <b>$anschrift</b><br>";
+            echo"Ihr Wohnort lautet: <b>$ort</b><br>";
+            echo"Ihre Telefonnummer lautet: <b>$tel</b><br>";
+            echo"Sie sind <b>$alter</b> Jahre alt<br>";
+            echo"Sie wollen <b>$zimmerAnz</b> Zimmer buchen. Welche jeweils <b>$personenAnz</b> beherbergen<br>";
+            echo"Sie wünschen sich eine <b>$verpflegung</b><br>";
+            echo"Ihr Urlaub beginnt: <b>$anreise</b><br>";
+            echo"Ihr Urlaub endet: <b>$abreise</b><br>";
+            ?>
+            <input type="radio" name="sicher" value="ja"> Ja, folgende Daten sind richtig
+            <br>
+            <input type="radio" name="sicher" value="nein"> Nein, die folgenden Daten sind nicht richtig
+            <br>
+            <br>
+            <input type="submit" name="bestaetigen" value="bestätigen">
+            </form>
+        <?php
+            }
+            
+//echtes Formular
         }
     } else {
     ?>
