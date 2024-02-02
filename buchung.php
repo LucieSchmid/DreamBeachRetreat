@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,90 +34,48 @@
         } else {
             //Wenn alles da ist weitermachen
             //auspacken
-            $nachname = trim(htmlspecialchars($_POST['nachname']));
-            $vorname = trim(htmlspecialchars($_POST['vorname']));
-            $anschrift = trim(htmlspecialchars($_POST['anschrift']));
-            $ort = trim(htmlspecialchars($_POST['ort']));
-            $tel = trim(htmlspecialchars($_POST['tel']));
-            $alter = trim(htmlspecialchars($_POST['alter']));
-            $zimmerAnz = trim(htmlspecialchars($_POST['zimmerAnz']));
-            $personenAnz = trim(htmlspecialchars($_POST['personenAnz']));
-            $verpflegung = trim(htmlspecialchars($_POST['verpflegung']));
-            $anreise = trim(htmlspecialchars($_POST['anreiseDatum'])) . " " . trim(htmlspecialchars($_POST['anreiseZeit']));
-            $abreise = trim(htmlspecialchars($_POST['abreiseDatum'])) . " " . trim(htmlspecialchars($_POST['abreiseZeit']));
+            $_SESSION['nachname'] = trim(htmlspecialchars($_POST['nachname']));
+            $_SESSION['vorname'] =trim(htmlspecialchars($_POST['vorname']));
+            $_SESSION['anschrift'] = trim(htmlspecialchars($_POST['anschrift']));
+            $_SESSION['ort'] = trim(htmlspecialchars($_POST['ort']));
+            $_SESSION['tel'] = trim(htmlspecialchars($_POST['tel']));
+            $_SESSION['alter'] = trim(htmlspecialchars($_POST['alter']));
+            $_SESSION['zimmerAnz'] = trim(htmlspecialchars($_POST['zimmerAnz']));
+            $_SESSION['personenAnz'] = trim(htmlspecialchars($_POST['personenAnz']));
+            $_SESSION['verpflegung'] = trim(htmlspecialchars($_POST['verpflegung']));
+            $_SESSION['anreise'] = trim(htmlspecialchars($_POST['anreiseDatum'])) . " " . trim(htmlspecialchars($_POST['anreiseZeit']));
+            $_SESSION['abreise'] = trim(htmlspecialchars($_POST['abreiseDatum'])) . " " . trim(htmlspecialchars($_POST['abreiseZeit']));
 
-            //Anfang des Daten kontrollieren
-            if (isset($_POST['bestaetigen'])) {
-                if (empty($_POST['sicher'])) {
-                    echo "Bitte lassen Sie uns über die Richtigkeit ihrer Daten wissen";
-                } else {
-                    $sicher = $_POST['sicher'];
-                    if ($sicher == "ja") {
-                        //DB Verbindung
-                        require_once('db.php');
-
-                        //SQL-Statement aufbauen
-                        try {
-                            $statement = $pdo->prepare("INSERT INTO buchung(nachname, vorname, anschrift, ort, telefon, wieAlt, zimmer,
-                                       personenProZimmer,anreise, abreise, verpflegung) 
-                                       VALUES (:nachname, :vorname, :anschrift, :ort, :telefon, :wieAlt, :zimmer, :personenProZimmer, :anreise, :abreise, :verpflegung)");
-                            //alle PLatzhalter mit Werten belegen (binden)
-                            $statement->bindParam(":nachname", $nachname);
-                            $statement->bindParam(":vorname", $vorname);
-                            $statement->bindParam(":anschrift", $anschrift);
-                            $statement->bindParam(":ort", $ort);
-                            $statement->bindParam(":telefon", $tel);
-                            $statement->bindParam(":wieAlt", $alter);
-                            $statement->bindParam(":zimmer", $zimmerAnz);
-                            $statement->bindParam(":personenProZimmer", $personenAnz);
-                            $statement->bindParam(":anreise", $anreise);
-                            $statement->bindParam(":abreise", $abreise);
-                            $statement->bindParam(":verpflegung", $verpflegung);
-
-                            //Statement ausführen
-                            $statement->execute();
-                        } catch (PDOException $e) {
-                            echo $e->getMessage();
-                            die("Fehler beim buchen.");
-                        }
-                        echo "<h2>Vielen Dank für das bestätigen ihrer Daten. Ihre Buchung konnte erfolgreich durchgeführt werden.
-                                           Hier wartet alles nurmehr auf sie!</h2>";
-                    } else {
-                        //Kunden dass Buchungsformular nochmal neu anzeigen mit entsprechender Meldung
-                    }
-                }
-            } else {
     ?>
-                <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
-                    <h2> Vielen Dank für ihre Buchung!<br>Wir freuen uns sehr dass sie sich für einen Urlaub
-                        bei Dream Beach Retreat entschieden haben.</h2>
-                    Bitte kontrollieren Sie nochamls folgende Daten auf ihre Richtigkeit.<br>Dies ist ein essentieler
-                    Schritt für die reibungslose Abwicklung ihrer Urlaubsbuchung:
-                    <br>
-                    <?php
-                    echo "Ihr Zuname lautet: <b>$nachname</b><br>";
-                    echo "Ihr Vorname lautet: <b>$vorname</b><br>";
-                    echo "Ihre Anschrift lautet: <b>$anschrift</b><br>";
-                    echo "Ihr Wohnort lautet: <b>$ort</b><br>";
-                    echo "Ihre Telefonnummer lautet: <b>$tel</b><br>";
-                    echo "Sie sind <b>$alter</b> Jahre alt<br>";
-                    echo "Sie wollen <b>$zimmerAnz</b> Zimmer buchen. Welche jeweils <b>$personenAnz</b> beherbergen<br>";
-                    echo "Sie wünschen sich eine <b>$verpflegung</b><br>";
-                    echo "Ihr Urlaub beginnt: <b>$anreise</b><br>";
-                    echo "Ihr Urlaub endet: <b>$abreise</b><br>";
-                    ?>
-                    <input type="radio" name="sicher" value="ja"> Ja, folgende Daten sind richtig
-                    <br>
-                    <input type="radio" name="sicher" value="nein"> Nein, die folgenden Daten sind nicht richtig
-                    <br>
-                    <br>
-                    <input type="submit" name="bestaetigen" value="bestätigen">
-                </form>
+            <form enctype="multipart/form-data" method="post" action="ausgabe.php">
+                <h2> Vielen Dank für ihre Buchung!<br>Wir freuen uns sehr dass sie sich für einen Urlaub
+                    bei Dream Beach Retreat entschieden haben.</h2>
+                Bitte kontrollieren Sie nochamls folgende Daten auf ihre Richtigkeit.<br>Dies ist ein essentieler
+                Schritt für die reibungslose Abwicklung ihrer Urlaubsbuchung:
+                <br>
+                <?php
+                echo "Ihr Zuname lautet: <b>".$_SESSION['nachname']."</b><br>";
+                echo "Ihr Vorname lautet: <b>".$_SESSION['vorname']."</b><br>";
+                echo "Ihre Anschrift lautet: <b>".$_SESSION['anschrift']."</b><br>";
+                echo "Ihr Wohnort lautet: <b>".$_SESSION['ort']."</b><br>";
+                echo "Ihre Telefonnummer lautet: <b>".$_SESSION['tel']."</b><br>";
+                echo "Sie sind <b>".$_SESSION['alter']."</b> Jahre alt<br>";
+                echo "Sie wollen <b>".$_SESSION['zimmerAnz']."</b> Zimmer buchen. Welche jeweils <b>".$_SESSION['personenAnz']."</b> beherbergen<br>";
+                echo "Sie wünschen sich eine <b>".$_SESSION['verpflegung']."</b><br>";
+                echo "Ihr Urlaub beginnt: <b>".$_SESSION['anreise']."</b><br>";
+                echo "Ihr Urlaub endet: <b>".$_SESSION['abreise']."</b><br>";
+                ?>
+                <input type="radio" name="sicher" value="ja"> Ja, folgende Daten sind richtig
+                <br>
+                <input type="radio" name="sicher" value="nein"> Nein, die folgenden Daten sind nicht richtig
+                <br>
+                <br>
+                <input type="submit" name="bestaetigen" value="bestätigen">
+            </form>
         <?php
-            }
-
-            //echtes Formular
         }
+
+        
     } else {
         ?>
         <h3>
