@@ -13,6 +13,11 @@ session_start();
 </head>
 
 <body>
+    <h1>
+        <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="100" height="100" /></div>
+        Dream Beach Retreat
+
+    </h1>
     <?php
     $sicher = $_POST['sicher'];
     if ($sicher == "ja") {
@@ -43,10 +48,27 @@ session_start();
             echo $e->getMessage();
             die("Fehler beim buchen.");
         }
-        echo "<h2>Vielen Dank für das bestätigen ihrer Daten. Ihre Buchung konnte erfolgreich durchgeführt werden.
-        Hier wartet alles nurmehr auf sie!</h2>";
-    }else{
-        
+        echo "<h2 style='color:rgb(8,48,69)';>Vielen Dank für das bestätigen ihrer Daten. Ihre Buchung konnte erfolgreich durchgeführt werden.
+        <br>Hier wartet alles nurmehr auf sie!</h2>";
+        echo"<h3>Entdecken Sie unser Hotel, wo Erholung und Aktivitäten Hand in Hand gehen!<br></h3>
+        <h4>Neben unseren komfortablen Unterkünften bieten wir auch ein umfangreiches Sport- und Wellnessangebot.<br>
+        Von Fitnessräumen bis hin zu entspannenden Spa-Behandlungen - wir haben alles, um Ihren Aufenthalt unvergesslich zu machen.<br>
+        Gönnen Sie sich eine Auszeit und erleben Sie pure Erholung bei uns im Dream Beach Retreat.</h4>";
+    } else { //Wenn kunde beim Bestätigen auf nein klickt und seine EInträge ausbessern möchte
+    ?>
+        <h3>Keine Sorge, klicken Sie einfach auf <i>erneut buchen.</i><br></div>Ihre bisherigen Einträge
+            werden nicht gespeichert. Füllen Sie einfach erneut die Felder aus.</h3>
+
+
+        <form method="post">
+            <input type="submit" name="erneutBuchen" value="erneut buchen" />
+        </form>
+    <?php
+
+        if (isset($_POST['erneutBuchen'])) {
+            $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/buchung.php';
+            header('Location: ' . $pfad);
+        }
     }
     ?>
 </body>

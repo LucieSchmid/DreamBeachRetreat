@@ -89,7 +89,8 @@ session_start();
             <table>
                 <tr>
                     <td><label for="nachname"> Wie lautet ihr Zuname? </label></td>
-                    <td><input type="text" id="nachname" name="nachname" required></td>
+                    <td><input type="text" id="nachname" name="nachname" value="<?php if(!empty($nachname)){ echo "$nachname";}?>" required></td>
+                    
                 </tr>
                 <tr>
                     <td><label for="vorname">Wie lautet ihr Vorname? </label></td>
