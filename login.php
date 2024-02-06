@@ -11,17 +11,23 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anmeldung</title>
+    <link rel="stylesheet" type="text/css" href="stand.css">
 </head>
 
 <body>
-
+<header>
+<h1>
+        <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="100" height="100" /></div>
+        Dream Beach Retreat
+    </h1>
+</header>
     <?php
 
     $formular_anzeigen = true;
     $id;
 
     if (isset($_SESSION['email'])) {
-        echo "<h1>Sie sind schon angemeldet.</h1>
+        echo "<h2>Sie sind schon angemeldet.</h2><br>
         Klicken Sie <a href='hauptseite.html'>hier</a> um auf die Startseite wieder zurückzukehren.<br>
         oder Klicken Sie <a href='logout.php'>hier</a>, um sich auszuloggen.";
         $formular_anzeigen = false;
@@ -96,7 +102,8 @@ session_start();
         if ($formular_anzeigen) {
 
     ?>
-            <h1>Login</h1>
+            <h2>Login</h2>
+            <br>
             <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
                 <p>Solltest Du noch nicht registriert sein, dann klicke <a href="registrieren.php">hier</a></p>
 
