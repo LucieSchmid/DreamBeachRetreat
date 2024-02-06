@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -19,7 +19,8 @@
 
 <body>
     <header>
-        <li class="hintergrund" style="display: grid; grid-template-columns: 100px ; grid-template-rows: 50px 50px; padding-bottom: 10px">
+        <li class="hintergrund"
+            style="display: grid; grid-template-columns: 100px ; grid-template-rows: 50px 50px; padding-bottom: 10px">
             <a href="hauptseite.html"><img src="images/logo.png" width="60" height="60" alt="Logo"
                     class="img-fluid rounded m-4" aligen="left" style="grid-row: 1 / 2"></a>
             <h1 style="grid-row: 1; grid-column: 2; text-align: left; margin-top: 20px;">Dream Beach Retreat</h1>
@@ -63,87 +64,242 @@
         </nav>
     </header>
     <main>
-        <h1 id="zimmer">Zimmer</h1>
-
-        <p>Sehr geehrte/r Kunde/Kundin, wir möchten Sie darauf hinweisen, dass wenn Sie ein Zimmer bzw. ein Apartment
-            buchen,<br> Sie auch inklusiv die Sport- und Wellnessangebote nutzen können, natürlich ist es kein muss.
+        <p style="color: white">Sehr geehrte/r Kunde/Kundin, wir möchten Sie darauf hinweisen, dass wenn Sie ein Zimmer
+            bzw. ein Apartment
+            buchen,
+            <br>
+            Sie auch inklusiv die Sport- und Wellnessangebote nutzen können, natürlich ist es kein muss.
         </p>
 
-        <div class="container mt-3">
-            <h2>Einzelzimmer</h2>
-            <div class="card" style="width: 1000px;">
-                <img class="card-img-top" src="images/EZ.jpg" alt="Einzelzimmer" style="width:50%">
-                <div class="card-body">
-                    <h4 class="card-title">Einzelzimmer</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="buchen.php" class="btn btn-primary">Jetzt buchen</a>
-                </div>
-            </div>
-        </div>
-        <br>
+        <h1 class="zimmer" style="color: white" id="zimmer">Zimmer</h1>
 
-        <div class="container mt-3">
-            <h2>Doppelzimmer</h2>
-            <div class="card" style="width:1000px">
-                <img class="card-img-top" src="images/DZ.jpg" alt="Doppelzimmer" style="width:50%">
-                <div class="card-body">
-                    <h4 class="card-title">Familienzimmer</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="buchen.php" class="btn btn-primary">Jetzt buchen</a>
+        <div class="container p-2 hinterZimmer">
+            <div class="row">
+                <h2 class="text-center">Einzelzimmer</h2>
+                <div class="col-12 col-md-6 pt-3">
+                    <img src="images/EZ.jpg" alt="Einzelzimmer" class="img-fluid rounded">
                 </div>
-            </div>
-        </div>
-        <br>
-
-        <div class="container mt-3">
-            <h2>Familienzimmer (max. 5 Personen)</h2>
-            <div class="card" style="width: 1000px;">
-                <img class="card-img-top" src="" alt="Familienzimmer" style="width:50%">
-                <div class="card-body">
-                    <h4 class="card-title">Doppelzimmer</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer
+                <div class="col-12 col-md-5 p-2">
+                    <p>
+                        Dieses Einzelzimmer ist perfekt für einen ruhigen Entspannenden Urlaub alleine.
+                    <h5>Serviceleistungen und Ausstattung:</h5>
+                            <ul>
+                                <li>Maximal 1 Person</li>
+                                <li>Meerblick</li>
+                                <li>Badezimmer mit Dusche</li>
+                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                                <li>Klimaanlage</li>
+                                <li>Terrasse oder Balkon</li>
+                                <li>Haartrockner</li>
+                                <li>W-LAN</li>
+                            </ul>
                     </p>
-                    <a href="buchen.php" class="btn btn-primary">Jetzt buchen</a>
+                    <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
                 </div>
             </div>
         </div>
-        <br><br>
 
 
-
-        <h1 id="apartments">Apartments</h1>
-
-        <div class="container mt-3">
-            <h2>Apartment 1</h2>
-            <div class="card" style="width:1000px">
-                <img class="card-img-top" src="" alt="Apartment 1" style="width:50%">
-                <div class="card-body">
-                    <h4 class="card-title">Apartment 1</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and
-                        engineer</p>
-                    <a href="buchen.php" class="btn btn-primary">Jetzt buchen</a>
+        <div class="container p-2 hinterZimmer">
+            <div class="row">
+                <h2 class="text-center">Doppelzimmer</h2>
+                <div class="col-12 col-md-6 pt-3">
+                    <img src="images/DZ.jpg" alt="Doppelzimmer" class="img-fluid rounded">
                 </div>
-            </div>
-        </div>
-        <br>
-
-
-        <div class="container mt-3">
-            <h2>Apartment 2</h2>
-            <div class="card" style="width: 1000px;">
-                <img class="card-img-top" src="" alt="Apartment 2" style="width:50%">
-                <div class="card-body">
-                    <h4 class="card-title">Apartment 2</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and
-                        engineer
+                <div class="col-12 col-md-5 p-2">
+                    <p>Diese Doppelzimmer ist perfekt für einen ruhigen, entspannten Urlaub mit Freunden.
+                    <h5>Serviceleistungen und Ausstattung:</h5>
+                            <ul>
+                                <li>Maximal 2 Person</li>
+                                <li>getrennte Betten</li>
+                                <li>Meerblick</li>
+                                <li>Badezimmer mit Dusche</li>
+                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                                <li>Klimaanlage</li>
+                                <li>Terrasse oder Balkon</li>
+                                <li>Haartrockner</li>
+                                <li>W-LAN</li>
+                            </ul>
                     </p>
-                    <a href="buchen.php" class="btn btn-primary">Jetzt buchen</a>
+                    <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
                 </div>
             </div>
         </div>
+
+        <div class="container p-2 hinterZimmer">
+            <div class="row">
+                <h2 class="text-center">Doppelzimmer</h2>
+                <div class="col-12 col-md-6 pt-3">
+                    <img src="images/doppelzimmer.jpg" alt="Doppelzimmer" class="img-fluid rounded">
+                </div>
+                <div class="col-12 col-md-5 p-2">
+                    <p>Diese Doppelzimmer ist perfekt für einen ruhigen, entspannten und romantischen Urlaub zu zweit.
+                    <h5>Serviceleistungen und Ausstattung:</h5>
+                            <ul>
+                                <li>Maximal 2 Person</li>
+                                <li>Meerblick</li>
+                                <li>Badezimmer mit Dusche</li>
+                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                                <li>Klimaanlage</li>
+                                <li>Terrasse oder Balkon</li>
+                                <li>Haartrockner</li>
+                                <li>W-LAN</li>
+                            </ul>
+                    </p>
+                    <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container p-2 hinterZimmer">
+            <div class="row">
+                <h2 class="text-center">Familienzimmer</h2>
+                <div class="col-12 col-md-6 pt-3">
+                    <img src="images/familienzimmer.jpg" alt="Doppelzimmer" class="img-fluid rounded">
+                </div>
+                <div class="col-12 col-md-5 p-2">
+                    <p>Diese Familienzimmer ist perfekt für einen ruhigen, entspannten und spannenden Urlaub mit der Familie.
+                    <h5>Serviceleistungen und Ausstattung:</h5>
+                            <ul>
+                                <li>Maximal 4 Person</li>
+                                <li>Zwei Zimmer mit Durchgangstür</li>
+                                <li>Meerblick</li>
+                                <li>Badezimmer mit Dusche</li>
+                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                                <li>Klimaanlage</li>
+                                <li>Terrasse oder Balkon</li>
+                                <li>Haartrockner</li>
+                                <li>W-LAN</li>
+                            </ul>
+                    </p>
+                    <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container p-2 hinterZimmer">
+            <div class="row">
+                <h2 class="text-center">Familienzimmer</h2>
+                <div class="col-12 col-md-6 pt-3">
+                    <img src="images/familienzimmer1.jpg" alt="Familienzimmer" class="img-fluid rounded">
+                </div>
+                <div class="col-12 col-md-5 p-2">
+                    <p>Diese Familienzimmer ist perfekt für einen ruhigen, entspannten und spannenden Urlaub mit der Familie.
+                    <h5>Serviceleistungen und Ausstattung:</h5>
+                            <ul>
+                                <li>Maximal 5 Person</li>
+                                <li>Meerblick</li>
+                                <li>Badezimmer mit Dusche</li>
+                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                                <li>Klimaanlage</li>
+                                <li>Terrasse oder Balkon</li>
+                                <li>Haartrockner</li>
+                                <li>W-LAN</li>
+                            </ul>
+                    </p>
+                    <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="zimmer" id="apartments">Häuser | Apartments</h1>
+
+        <div class="container p-2 hinterZimmer">
+            <div class="row">
+                <h2 class="text-center">Apartment</h2>
+                <div class="col-12 col-md-6 pt-3">
+                    <img src="images/apartment1.jpg" alt="Apartment" class="img-fluid rounded">
+                </div>
+                <div class="col-12 col-md-5 p-2">
+                    <p>Diese Apartment ist perfekt für einen ruhigen, entspannten und spannenden Urlaub mit der Familie oder Freunden.
+                    <h5>Serviceleistungen und Ausstattung:</h5>
+                            <ul>
+                                <li>Maximal 6 Person</li>
+                                <li>Meerblick</li>
+                                <li>Badezimmer mit Dusche</li>
+                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                                <li>Klimaanlage</li>
+                                <li>Terrasse oder Balkon</li>
+                                <li>Haartrockner</li>
+                                <li>W-LAN</li>
+                            </ul>
+                    </p>
+                    <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container p-2 hinterZimmer">
+            <div class="row">
+                <h2 class="text-center">Bungalow</h2>
+                <div class="col-12 col-md-6 pt-3">
+                    <img src="images/bungalow.jpg" alt="Bungalow" class="img-fluid rounded">
+                </div>
+                <div class="col-12 col-md-5 p-2">
+                    <p>Dieser Bungalow ist perfekt für einen ruhigen, entspannten und spannenden Urlaub mit der Familie oder mit Freunden.
+                    <h5>Serviceleistungen und Ausstattung:</h5>
+                            <ul>
+                                <li>Maximal 8 Person</li>
+                                <li>Meerblick</li>
+                                <li>Badezimmer mit Dusche</li>
+                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                                <li>Klimaanlage</li>
+                                <li>Terrasse oder Balkon</li>
+                                <li>Haartrockner</li>
+                                <li>W-LAN</li>
+                            </ul>
+                    </p>
+                    <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container p-2 hinterZimmer">
+            <div class="row">
+                <h2 class="text-center">Strandvilla</h2>
+                <div class="col-12 col-md-6 pt-3">
+                    <img src="images/strandvilla.jpg" alt="Strandvilla" class="img-fluid rounded">
+                </div>
+                <div class="col-12 col-md-5 p-2">
+                    <p>Diese Strandvilla ist perfekt für einen ruhigen, entspannten und spannenden Urlaub mit der Familie oder mit Freunden.
+                    <h5>Serviceleistungen und Ausstattung:</h5>
+                            <ul>
+                                <li>Maximal 10 Person</li>
+                                <li>Meerblick</li>
+                                <li>Pool</li>
+                                <li>Badezimmer mit Dusche</li>
+                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                                <li>Klimaanlage</li>
+                                <li>Terrasse oder Balkon</li>
+                                <li>Haartrockner</li>
+                                <li>W-LAN</li>
+                            </ul>
+                    </p>
+                    <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
+                </div>
+            </div>
+        </div>
+
+
     </main>
     <footer>
-
+        <div class="bg-dark text-white pt-3 mt-5">
+            <div>
+                <div class="text-center">
+                    <p>Hier findest du uns noch:</p>
+                </div>
+                <div class="text-center verlinkungen">
+                    <a link href="https://www.instagram.com/DreamBeachRetreat" target="_blank"><i class="fa fa-instagram" style="font-size:24px"></i></a>
+                    <i class="bi bi-instagram">DreamBeachRetreat</i>
+                    <a link href="https://www.facebook.com/DreamBeachRetreat" target="_blank"><i class="fa fa-facebook" style="font-size:24px"></i></a>
+                    <i class="bi bi-instagram">DreamBeachRetreat</i>
+                    <a link href="https://www.pinterest.at/DreamBeachRetreat/"><i class="fa fa-pinterest"></i></a>
+                    <i class="bi bi-instagram">DreamBeachRetreat</i>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 

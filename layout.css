@@ -2,18 +2,12 @@ body {
     background-image: url(images/aussen.jpg);
 }
 
-
-.hintergrund {
-    background-color: rgba(201, 233, 247, 0.719);
-}
-
-.ueberschriftHintergrund {
-    background-color: rgb(201, 233, 247);
-    padding: 5px;
-}
-
 header {
     position: relative;
+}
+
+h5{
+    text-decoration: underline rgb(201, 233, 247);
 }
 
 /* unvisited link */
@@ -40,8 +34,33 @@ i {
     padding-right: 12px;
 }
 
+.bilder{
+    border-radius: 10px;
+}
+
 .verlinkungen {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.hintergrund {
+    background-color: rgba(201, 233, 247, 0.719);
+}
+
+.ueberschriftHintergrund {
+    background-color: rgb(201, 233, 247);
+    padding: 5px;
+}
+
+.hinterZimmer{
+    background-color: white;
+    border-radius: 10px;
+
+    margin-bottom: 50px;
+}
+
+.zimmer{
+    text-align: center;
+    color: white;
 }
