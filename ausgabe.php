@@ -9,6 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ausgabe</title>
+    <link rel="stylesheet" type="text/css" href="stand.css">
 </head>
 
 <body>
