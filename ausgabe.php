@@ -54,6 +54,15 @@ session_start();
         <h4>Neben unseren komfortablen Unterkünften bieten wir auch ein umfangreiches Sport- und Wellnessangebot.<br>
         Von Fitnessräumen bis hin zu entspannenden Spa-Behandlungen - wir haben alles, um Ihren Aufenthalt unvergesslich zu machen.<br>
         Gönnen Sie sich eine Auszeit und erleben Sie pure Erholung bei uns im Dream Beach Retreat.</h4>";
+
+        echo"Schauen Sie sich auf unserer Homepage gerne nach unseren Zusatzangeboten um. Haben wir ihr Interesse geweckt?
+        <br> Dann buchen Sie sich doch gleich ihr Zusatzangebot GRATIS zu ihrem Aufenthalt hinzu.
+        <br>
+        <br>
+        <a link href='wellnessf.php'>Klicken Sie hier </a>, um unser Wellnessangebot zu nutzen.
+        <br>
+        <a link href='sportf.php'>Klicken Sie hier </a>, um unser Sportangebot zu nutzen.";
+
     } else { //Wenn kunde beim Bestätigen auf nein klickt und seine EInträge ausbessern möchte
     ?>
         <h3>Keine Sorge, klicken Sie einfach auf <i>erneut buchen.</i><br></div>Ihre bisherigen Einträge
