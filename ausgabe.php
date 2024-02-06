@@ -9,9 +9,17 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ausgabe</title>
+    <link rel="stylesheet" type="text/css" href="stand.css">
 </head>
 
 <body>
+    <header>
+        <h1>
+            <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="100" height="100" /></div>
+            Dream Beach Retreat
+
+        </h1>
+    </header>
     <?php
     $sicher = $_POST['sicher'];
     if ($sicher == "ja") {
@@ -42,10 +50,35 @@ session_start();
             echo $e->getMessage();
             die("Fehler beim buchen.");
         }
-        echo "<h2>Vielen Dank für das bestätigen ihrer Daten. Ihre Buchung konnte erfolgreich durchgeführt werden.
-        Hier wartet alles nurmehr auf sie!</h2>";
-    }else{
-        
+        echo "<h2 style='color:rgb(8,48,69)';>Vielen Dank für das bestätigen ihrer Daten. Ihre Buchung konnte erfolgreich durchgeführt werden.
+        <br>Hier wartet alles nurmehr auf sie!</h2>";
+        echo "<h3>Entdecken Sie unser Hotel, wo Erholung und Aktivitäten Hand in Hand gehen!<br></h3>
+        <h4>Neben unseren komfortablen Unterkünften bieten wir auch ein umfangreiches Sport- und Wellnessangebot.<br>
+        Von Fitnessräumen bis hin zu entspannenden Spa-Behandlungen - wir haben alles, um Ihren Aufenthalt unvergesslich zu machen.<br>
+        Gönnen Sie sich eine Auszeit und erleben Sie pure Erholung bei uns im Dream Beach Retreat.</h4>";
+
+        echo "Schauen Sie sich auf unserer Homepage gerne nach unseren Zusatzangeboten um. Haben wir ihr Interesse geweckt?
+        <br> Dann buchen Sie sich doch gleich ihr Zusatzangebot GRATIS zu ihrem Aufenthalt hinzu.
+        <br>
+        <br>
+        <a link href='wellnessf.php'>Klicken Sie hier </a>, um unser Wellnessangebot zu nutzen.
+        <br>
+        <a link href='sportf.php'>Klicken Sie hier </a>, um unser Sportangebot zu nutzen.";
+    } else { //Wenn kunde beim Bestätigen auf nein klickt und seine EInträge ausbessern möchte
+    ?>
+        <h3>Keine Sorge, klicken Sie einfach auf <i>erneut buchen.</i><br></div>Ihre bisherigen Einträge
+            werden nicht gespeichert. Füllen Sie einfach erneut die Felder aus.</h3>
+
+
+        <form method="post">
+            <input type="submit" name="erneutBuchen" value="erneut buchen" />
+        </form>
+    <?php
+
+        if (isset($_POST['erneutBuchen'])) {
+            $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/buchung.php';
+            header('Location: ' . $pfad);
+        }
     }
     ?>
 </body>

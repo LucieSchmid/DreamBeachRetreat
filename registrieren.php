@@ -5,11 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrieren</title>
+    <link rel="stylesheet" type="text/css" href="stand.css">
 </head>
 
 <body>
-    <h1> Dream Beach Retreat - Registrierung</h1>
+<header>
+<h1>
+        <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="100" height="100" /></div>
+        Dream Beach Retreat
+    </h1>
+</header>
 
+    <h2>Registrierung</h2>
+<br>
     <p>Bitte gib eine gültige E-Mail-Adresse und ein sicheres Passwort ein, um Dich für das Resort zu registrieren.</p>
 
     <?php

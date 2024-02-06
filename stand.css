@@ -12,6 +12,10 @@ h1{
 
 }
 
+h2{
+    color:rgb(8, 48, 69);
+}
+
 .runde-ecken {
 	border-radius: 10px;
 	-moz-border-radius: 10px;
