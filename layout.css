@@ -1,4 +1,4 @@
-body{
+body {
     background-image: url(images/aussen.jpg);
 }
 
@@ -12,6 +12,36 @@ body{
     padding: 5px;
 }
 
-header{
+header {
     position: relative;
+}
+
+/* unvisited link */
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: blueviolet;
+}
+
+/* selected link */
+a:active {
+    color: blueviolet;
+}
+
+i {
+    padding-right: 12px;
+}
+
+.verlinkungen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
