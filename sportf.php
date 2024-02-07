@@ -21,33 +21,39 @@ session_start();
         echo "Sie müssen sich zuerst anmelden. <a href='login.php'>Hier geht es zum Login.</a>";
     } else {
         if (isset($_POST['buchen'])) {
-            if ((empty($_POST['wasser']) && empty($_POST['land']))) {
+            if (empty($_POST['wasser']) && empty($_POST['land'])) {
                 echo "<h2>Die Pflichtfelder wurden nicht ausgefüllt.</h2>";
             } else {
-
-                $wasser = $_POST['wasser'];
-                $land = $_POST['land'];
+                
                 $email = $_SESSION['email'];
-
-                echo "<h1>Dream Beach Retreat - Sportbuchung</h1>";
-                echo "<p>Vielen Dank für Ihre Buchung!</p><br>";
-
-
-                echo $_SESSION['email'] . "<br>";
-
 
 
                 require_once('db.php');
 
-
                 try {
 
-                    $statement = $pdo->prepare("INSERT INTO sportb (email, art) VALUES (:email, :art)");
+                    // Füge die ausgewählten Optionen in die Datenbank ein
+                    if (!empty($_POST['wasser'])) {
+                        foreach ($_POST['wasser'] as $wasserOption) {
+                            $insertStatement = $pdo->prepare("INSERT INTO sportb (email, art) VALUES (:email, :art)");
+                            $insertStatement->bindParam(':email', $email);
+                            $insertStatement->bindParam(':art', $wasserOption);
+                            $insertStatement->execute();
+                        }
+                    }
 
-                    $statement->bindParam(':email', $email);
-                    $statement->bindParam(':art', $art);
+                    if (!empty($_POST['land'])) {
+                        foreach ($_POST['land'] as $landOption) {
+                            $insertStatement = $pdo->prepare("INSERT INTO sportb (email, art) VALUES (:email, :art)");
+                            $insertStatement->bindParam(':email', $email);
+                            $insertStatement->bindParam(':art', $landOption);
+                            $insertStatement->execute();
+                        }
+                    }
 
-                    $statement->execute();
+                    echo "<h2>Dream Beach Retreat - Sportbuchung</h2>";
+                    echo "<p>Vielen Dank für Ihre Buchung!</p><br>";
+                    echo $_SESSION['email'] . "<br>";
                 } catch (PDOException $ex) {
                     die("Fehler beim Einfügen der Daten in die Datenbank!");
                 }
