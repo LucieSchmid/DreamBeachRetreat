@@ -16,6 +16,9 @@ session_start();
 
     <?php
 
+    $wasserOption;
+    $landOption;
+
 
     if (!isset($_SESSION['email'])) {
         echo "Sie müssen sich zuerst anmelden. <a href='login.php'>Hier geht es zum Login.</a>";
@@ -24,36 +27,65 @@ session_start();
             if (empty($_POST['wasser']) && empty($_POST['land'])) {
                 echo "<h2>Die Pflichtfelder wurden nicht ausgefüllt.</h2>";
             } else {
-                
+
                 $email = $_SESSION['email'];
+
+
+                echo "<h2>Dream Beach Retreat - Sportbuchung</h2>";
+                echo "<p>Vielen Dank für Ihre Buchung!</p>";
+
+                echo $_SESSION['email'] . "<br>";
 
 
                 require_once('db.php');
 
+
                 try {
 
-                    // Füge die ausgewählten Optionen in die Datenbank ein
+                    //ausgewählte Optionen in die Datenbank eintragen
                     if (!empty($_POST['wasser'])) {
                         foreach ($_POST['wasser'] as $wasserOption) {
-                            $insertStatement = $pdo->prepare("INSERT INTO sportb (email, art) VALUES (:email, :art)");
-                            $insertStatement->bindParam(':email', $email);
-                            $insertStatement->bindParam(':art', $wasserOption);
-                            $insertStatement->execute();
+                            // Abfrage, um Uhrzeit, Wochentag und Preis für die Sportart abzurufen
+                            $query = $pdo->prepare("SELECT wochentag, uhrzeit, preis FROM sportf WHERE art = :art");
+                            $query->bindParam(':art', $wasserOption);
+                            $query->execute();
+                            $result = $query->fetch(PDO::FETCH_ASSOC);
+
+                            // Informationen aus der Abfrage ausgeben
+                            echo "Sportart: $wasserOption<br>";
+                            echo "Wochentag: " . $result['wochentag'] . "<br>";
+                            echo "Uhrzeit: " . $result['uhrzeit'] . "<br>";
+                            echo "Preis: " . $result['preis'] . "€<br>";
+
+                            // Option in die Datenbank eintragen
+                            $statement = $pdo->prepare("INSERT INTO sportb (email, art) VALUES (:email, :art)");
+                            $statement->bindParam(':email', $email);
+                            $statement->bindParam(':art', $wasserOption);
+                            $statement->execute();
                         }
                     }
 
                     if (!empty($_POST['land'])) {
                         foreach ($_POST['land'] as $landOption) {
-                            $insertStatement = $pdo->prepare("INSERT INTO sportb (email, art) VALUES (:email, :art)");
-                            $insertStatement->bindParam(':email', $email);
-                            $insertStatement->bindParam(':art', $landOption);
-                            $insertStatement->execute();
+                            // Abfrage, um Uhrzeit, Wochentag und Preis für die Sportart abzurufen
+                            $query = $pdo->prepare("SELECT wochentag, uhrzeit, preis FROM sportf WHERE art = :art");
+                            $query->bindParam(':art', $landOption);
+                            $query->execute();
+                            $result = $query->fetch(PDO::FETCH_ASSOC);
+
+                            // Informationen aus der Abfrage ausgeben
+                            echo "Sportart: $landOption<br>";
+                            echo "Wochentag: " . $result['wochentag'] . "<br>";
+                            echo "Uhrzeit: " . $result['uhrzeit'] . "<br>";
+                            echo "Preis: " . $result['preis'] . "€<br>";
+
+                            $statement = $pdo->prepare("INSERT INTO sportb (email, art) VALUES (:email, :art)");
+                            $statement->bindParam(':email', $email);
+                            $statement->bindParam(':art', $landOption);
+
+                            $statement->execute();
                         }
                     }
-
-                    echo "<h2>Dream Beach Retreat - Sportbuchung</h2>";
-                    echo "<p>Vielen Dank für Ihre Buchung!</p><br>";
-                    echo $_SESSION['email'] . "<br>";
                 } catch (PDOException $ex) {
                     die("Fehler beim Einfügen der Daten in die Datenbank!");
                 }
@@ -67,30 +99,30 @@ session_start();
             <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 
                 <label>Wassersport:</label><br>
-                <input type="checkbox" value="Stand-up Paddeln" name="wasser">Stand-up Paddeln<br>
+                <input type="checkbox" value="Stand-up Paddeln" name="wasser[]">Stand-up Paddeln<br>
                 Wochentag: Samstags<br>
                 Uhrzeit: 10:00 Uhr<br>
                 Preis: 25.00€<br><br>
-                <input type="checkbox" value="Segeln" name="wasser">Segeln<br>
+                <input type="checkbox" value="Segeln" name="wasser[]">Segeln<br>
                 Wochentag: Freitags<br>
                 Uhrzeit: 14:00 Uhr<br>
                 Preis: 25.00€<br><br>
-                <input type="checkbox" value="Surfen" name="wasser">Surfen<br>
+                <input type="checkbox" value="Surfen" name="wasser[]">Surfen<br>
                 Wochentag: Donnerstags<br>
                 Uhrzeit: 10:00 Uhr<br>
                 Preis: 25.00€
                 <br><br><br><br>
 
                 <label>Landsport:</label><br>
-                <input type="checkbox" value="Volleyball" name="land">Volleyball<br>
+                <input type="checkbox" value="Volleyball" name="land[]">Volleyball<br>
                 Wochentag: Montags<br>
                 Uhrzeit: 15:00 Uhr<br>
                 Preis: 20.00€<br><br>
-                <input type="checkbox" value="Tennis" name="land">Tennis<br>
+                <input type="checkbox" value="Tennis" name="land[]">Tennis<br>
                 Wochentag: Dienstags<br>
                 Uhrzeit: 16:00 Uhr<br>
                 Preis: 20.00€<br><br>
-                <input type="checkbox" value="Basketball" name="land">Basketball<br>
+                <input type="checkbox" value="Basketball" name="land[]">Basketball<br>
                 Wochentag: Mittwochs<br>
                 Uhrzeit: 09:00 Uhr<br>
                 Preis: 20.00€
