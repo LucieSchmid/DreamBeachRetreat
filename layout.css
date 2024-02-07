@@ -10,6 +10,10 @@ header {
     position: relative;
 }
 
+footer{
+    background-image: url(images/angi.jpg);
+}
+
 h5{
     text-decoration: underline rgb(201, 233, 247);
 }
