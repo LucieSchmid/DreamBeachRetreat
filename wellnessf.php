@@ -82,8 +82,7 @@ session_start();
 
 
 
-            <h2>Wellness-Angebote</h2>
-            <br>
+            <h2>Wellness-Angebote</h2><br>
             <p>Hinweis: Die Wellnessangebote gibt es an egal welchen Wochentag zur Verfügung.</p>
             <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 
