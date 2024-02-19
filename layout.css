@@ -10,12 +10,23 @@ header {
     position: relative;
 }
 
-footer{
-    background-image: url(images/angi.jpg);
-}
 
 h5{
     text-decoration: underline rgb(201, 233, 247);
+}
+
+p{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+h3{
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+iframe{
+    padding-left: 50px;
 }
 
 /* unvisited link */
