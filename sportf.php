@@ -8,11 +8,17 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="stand.css" />
+    <link rel="stylesheet" type="text/css" href="stand.css">
     <title>Document</title>
 </head>
 
 <body>
+    <header>
+        <h1>
+            <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="100" height="100" /></div>
+            Dream Beach Retreat
+        </h1>
+    </header>
 
     <?php
 
@@ -44,23 +50,33 @@ session_start();
 
                     //ausgewählte Optionen in die Datenbank eintragen
                     if (!empty($_POST['wasser'])) {
+
                         foreach ($_POST['wasser'] as $wasserOption) {
+
                             // Abfrage, um Uhrzeit, Wochentag und Preis für die Sportart abzurufen
                             $query = $pdo->prepare("SELECT wochentag, uhrzeit, preis FROM sportf WHERE art = :art");
                             $query->bindParam(':art', $wasserOption);
                             $query->execute();
-                            $result = $query->fetch(PDO::FETCH_ASSOC);
+                            $row = $query->fetch(PDO::FETCH_ASSOC);
 
-                            // Informationen aus der Abfrage ausgeben
-                            echo "Sportart: $wasserOption<br>";
-                            echo "Wochentag: " . $result['wochentag'] . "<br>";
-                            echo "Uhrzeit: " . $result['uhrzeit'] . "<br>";
-                            echo "Preis: " . $result['preis'] . "€<br>";
+
+                            echo "Sportart:" . $wasserOption . "<br>";
+                            echo "Wochentag: " . $row['wochentag'] . "<br>";
+                            echo "Uhrzeit: " . $row['uhrzeit'] . "<br>";
+                            echo "Preis: " . $row['preis'] . "€<br><br>";
+
+
+                            $preis = $row['preis'];
+                            $uhrzeit = $row['uhrzeit'];
+                            $wochentag = $row['wochentag'];
 
                             // Option in die Datenbank eintragen
-                            $statement = $pdo->prepare("INSERT INTO sportb (email, art) VALUES (:email, :art)");
+                            $statement = $pdo->prepare("INSERT INTO sportb (email, art, preis, uhrzeit, wochentag) VALUES (:email, :art, :preis, :uhrzeit, :wochentag)");
                             $statement->bindParam(':email', $email);
                             $statement->bindParam(':art', $wasserOption);
+                            $statement->bindParam(':preis', $preis);
+                            $statement->bindParam(':uhrzeit', $uhrzeit);
+                            $statement->bindParam(':wochentag', $wochentag);
                             $statement->execute();
                         }
                     }
@@ -71,17 +87,25 @@ session_start();
                             $query = $pdo->prepare("SELECT wochentag, uhrzeit, preis FROM sportf WHERE art = :art");
                             $query->bindParam(':art', $landOption);
                             $query->execute();
-                            $result = $query->fetch(PDO::FETCH_ASSOC);
+                            $row = $query->fetch(PDO::FETCH_ASSOC);
 
                             // Informationen aus der Abfrage ausgeben
-                            echo "Sportart: $landOption<br>";
-                            echo "Wochentag: " . $result['wochentag'] . "<br>";
-                            echo "Uhrzeit: " . $result['uhrzeit'] . "<br>";
-                            echo "Preis: " . $result['preis'] . "€<br>";
+                            echo "Sportart:" . $landOption . "<br>";
+                            echo "Wochentag: " . $row['wochentag'] . "<br>";
+                            echo "Uhrzeit: " . $row['uhrzeit'] . "<br>";
+                            echo "Preis: " . $row['preis'] . "€<br><br>";
 
-                            $statement = $pdo->prepare("INSERT INTO sportb (email, art) VALUES (:email, :art)");
+                            $preis = $row['preis'];
+                            $uhrzeit = $row['uhrzeit'];
+                            $wochentag = $row['wochentag'];
+
+                            //in Datenbank eintragen
+                            $statement = $pdo->prepare("INSERT INTO sportb (email, art, preis, uhrzeit, wochentag) VALUES (:email, :art, :preis, :uhrzeit, :wochentag)");
                             $statement->bindParam(':email', $email);
                             $statement->bindParam(':art', $landOption);
+                            $statement->bindParam(':preis', $preis);
+                            $statement->bindParam(':uhrzeit', $uhrzeit);
+                            $statement->bindParam(':wochentag', $wochentag);
 
                             $statement->execute();
                         }
@@ -94,8 +118,8 @@ session_start();
     ?>
 
 
-            <h1>Sport-Angebote</h1>
-            <p style="font-style: italic" ;>Hinweis: </p>
+            <h2>Sport-Angebote</h2><br>
+
             <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 
                 <label>Wassersport:</label><br>
