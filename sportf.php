@@ -8,14 +8,14 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="stand.css">
+    <link rel="stylesheet" type="text/css" href="stand1.css">
     <title>Document</title>
 </head>
 
 <body>
     <header>
         <h1>
-            <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="100" height="100" /></div>
+            <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="150" height="150" /></div>
             Dream Beach Retreat
         </h1>
     </header>

@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="stand.css">
+    <link rel="stylesheet" type="text/css" href="stand1.css">
     <title>Buchungen</title>
 </head>
 
@@ -19,12 +19,12 @@ session_start();
         echo "Sie müssen sich zuerst anmelden. <a href='login.php'>Hier geht es zum Login.</a>";
     } else {
     ?>
-        <header>
-            <h1>
-                <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="100" height="100" /></div>
-                Dream Beach Retreat
-            </h1>
-            <header>
+    <header>
+    <h1>
+            <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="150" height="150" /></div>
+            Dream Beach Retreat
+        </h1>
+    </header>
                 <?php
                 if (isset($_POST['submit'])) {
                     //kontrollieren ob überhsaupt DAten da sind

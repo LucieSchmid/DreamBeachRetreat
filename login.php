@@ -11,16 +11,16 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anmeldung</title>
-    <link rel="stylesheet" type="text/css" href="stand.css">
+    <link rel="stylesheet" type="text/css" href="stand1.css">
 </head>
 
 <body>
-<header>
-<h1>
-        <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="100" height="100" /></div>
-        Dream Beach Retreat
-    </h1>
-</header>
+    <header>
+        <h1>
+            <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="150" height="150" /></div>
+            Dream Beach Retreat
+        </h1>
+    </header>
     <?php
 
     $formular_anzeigen = true;

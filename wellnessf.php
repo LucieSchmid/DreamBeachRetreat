@@ -9,13 +9,13 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="stand.css">
+    <link rel="stylesheet" type="text/css" href="stand1.css">
 </head>
 
 <body>
     <header>
         <h1>
-            <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="100" height="100" /></div>
+            <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="150" height="150" /></div>
             Dream Beach Retreat
         </h1>
     </header>
@@ -81,9 +81,8 @@ session_start();
     ?>
 
 
-
             <h2>Wellness-Angebote</h2><br>
-            <p>Hinweis: Die Wellnessangebote gibt es an egal welchen Wochentag zur Verfügung.</p>
+            <i>Hinweis: Die Wellnessangebote gibt es an egal welchen Wochentag zur Verfügung.</i>
             <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 
                 <label>Wellness-Art:</label><br>

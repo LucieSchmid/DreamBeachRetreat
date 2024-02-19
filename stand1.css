@@ -5,22 +5,25 @@ label{
 
 body{
     background-color: rgb(201,233,247);
+    font-size: 25px;
 }
 
 h1{
     color: rgb(57, 166, 229);
-    font-size: larger;
-
 }
 
 h2{
     color:rgb(8, 48, 69);
-    font-size: large;
+
 }
 
 .runde-ecken {
 	border-radius: 10px;
 	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px
+	-webkit-border-radius: 10px;
+}
+
+p {
+    font-size: 25px;
 }
 
