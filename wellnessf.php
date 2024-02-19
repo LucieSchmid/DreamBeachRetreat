@@ -62,14 +62,14 @@ session_start();
                     //Daten eintragen in die Datenbank
                     try {
 
-                        $st = $pdo->prepare("INSERT INTO wellnessb (email, art, preis, uhrzeit) VALUES (:email, :art, :preis, :uhrzeit)");
+                        $statement = $pdo->prepare("INSERT INTO wellnessb (email, art, preis, uhrzeit) VALUES (:email, :art, :preis, :uhrzeit)");
 
-                        $st->bindParam(':email', $email);
-                        $st->bindParam(':art', $art);
-                        $st->bindParam(':preis', $preis);
-                        $st->bindParam(':uhrzeit', $uhrzeit);
+                        $statement->bindParam(':email', $email);
+                        $statement->bindParam(':art', $art);
+                        $statement->bindParam(':preis', $preis);
+                        $statement->bindParam(':uhrzeit', $uhrzeit);
 
-                        $st->execute();
+                        $statement->execute();
                     } catch (PDOException $ex) {
                         die("Fehler beim Eintragen der Daten in die Datenbank.");
                     }

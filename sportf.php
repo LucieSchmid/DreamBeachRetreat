@@ -44,24 +44,35 @@ session_start();
 
                     //ausgewählte Optionen in die Datenbank eintragen
                     if (!empty($_POST['wasser'])) {
+                        
                         foreach ($_POST['wasser'] as $wasserOption) {
+
                             // Abfrage, um Uhrzeit, Wochentag und Preis für die Sportart abzurufen
                             $query = $pdo->prepare("SELECT wochentag, uhrzeit, preis FROM sportf WHERE art = :art");
                             $query->bindParam(':art', $wasserOption);
                             $query->execute();
-                            $result = $query->fetch(PDO::FETCH_ASSOC);
+                            $row = $query->fetch(PDO::FETCH_ASSOC);
 
                             // Informationen aus der Abfrage ausgeben
-                            echo "Sportart: $wasserOption<br>";
-                            echo "Wochentag: " . $result['wochentag'] . "<br>";
-                            echo "Uhrzeit: " . $result['uhrzeit'] . "<br>";
-                            echo "Preis: " . $result['preis'] . "€<br>";
+                            echo "Sportart:" . $wasserOption . "<br>";
+                            echo "Wochentag: " . $row['wochentag'] . "<br>";
+                            echo "Uhrzeit: " . $row['uhrzeit'] . "<br>";
+                            echo "Preis: " . $row['preis'] . "€<br><br>";
+
+
+                            $preis = $row['preis'];
+                            $uhrzeit = $row['uhrzeit'];
+                            $wochentag = $row['wochentag'];
 
                             // Option in die Datenbank eintragen
-                            $statement = $pdo->prepare("INSERT INTO sportb (email, art) VALUES (:email, :art)");
+                            $statement = $pdo->prepare("INSERT INTO sportb (email, art, preis, uhrzeit, wochentag) VALUES (:email, :art, :preis, :uhrzeit, :wochentag)");
                             $statement->bindParam(':email', $email);
                             $statement->bindParam(':art', $wasserOption);
+                            $statement->bindParam(':preis', $preis);
+                            $statement->bindParam(':uhrzeit', $uhrzeit); // Hier fügen Sie die Uhrzeit ein
+                            $statement->bindParam(':wochentag', $wochentag); // Und hier den Wochentag
                             $statement->execute();
+                            
                         }
                     }
 
@@ -71,17 +82,25 @@ session_start();
                             $query = $pdo->prepare("SELECT wochentag, uhrzeit, preis FROM sportf WHERE art = :art");
                             $query->bindParam(':art', $landOption);
                             $query->execute();
-                            $result = $query->fetch(PDO::FETCH_ASSOC);
+                            $row = $query->fetch(PDO::FETCH_ASSOC);
 
                             // Informationen aus der Abfrage ausgeben
-                            echo "Sportart: $landOption<br>";
-                            echo "Wochentag: " . $result['wochentag'] . "<br>";
-                            echo "Uhrzeit: " . $result['uhrzeit'] . "<br>";
-                            echo "Preis: " . $result['preis'] . "€<br>";
+                            echo "Sportart:" . $landOption . "<br>";
+                            echo "Wochentag: " . $row['wochentag'] . "<br>";
+                            echo "Uhrzeit: " . $row['uhrzeit'] . "<br>";
+                            echo "Preis: " . $row['preis'] . "€<br><br>";
 
-                            $statement = $pdo->prepare("INSERT INTO sportb (email, art) VALUES (:email, :art)");
+                            $preis = $row['preis'];
+                            $uhrzeit = $row['uhrzeit'];
+                            $wochentag = $row['wochentag'];
+
+                            //in Datenbank eintragen
+                            $statement = $pdo->prepare("INSERT INTO sportb (email, art, preis, uhrzeit, wochentag) VALUES (:email, :art, :preis, :uhrzeit, :wochentag)");
                             $statement->bindParam(':email', $email);
                             $statement->bindParam(':art', $landOption);
+                            $statement->bindParam(':preis', $preis);
+                            $statement->bindParam(':uhrzeit', $uhrzeit);
+                            $statement->bindParam(':wochentag', $wochentag);
 
                             $statement->execute();
                         }
