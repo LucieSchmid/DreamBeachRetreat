@@ -87,7 +87,7 @@ session_start();
 
                 <label>Wellness-Art:</label><br>
                 <input type="radio" name="art" value="Massage (alles)">Massage (alles)<br>Preis: 45,00€ <br>Uhrzeit: 19:00 Uhr<br><br>
-                <input type="radio" name="art" value="Tai-Massage" checked>Tai-Massage <br>Preis: 30,00€<br>Uhrzeit: 20:00 Uhr<br><br>
+                <input type="radio" name="art" value="Thai-Massage" checked>Tai-Massage <br>Preis: 30,00€<br>Uhrzeit: 20:00 Uhr<br><br>
                 <input type="radio" name="art" value="Rückenmassage">Rückenmassage <br>Preis: 25,00€<br>Uhrzeit: 21:00 Uhr<br><br>
                 <input type="radio" name="art" value="Fußmassage"> Fußmassage<br> Preis: 25,00€<br>Uhrzeit: 20:30 Uhr
                 <br><br>
