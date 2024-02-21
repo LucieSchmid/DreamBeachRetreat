@@ -49,7 +49,7 @@ session_start();
             echo $e->getMessage();
             die("Fehler beim buchen.");
         }
-        echo "<h2 style='color:rgb(8,48,69)';>Vielen Dank für das bestätigen ihrer Daten. Ihre Buchung konnte erfolgreich durchgeführt werden.
+        echo "<h2 style='color:rgb(8,48,69)';>Vielen Dank für das Bestätigen ihrer Daten. Ihre Buchung konnte erfolgreich durchgeführt werden.
         <br>Hier wartet alles nurmehr auf sie!</h2>";
         echo "<h3>Entdecken Sie unser Hotel, wo Erholung und Aktivitäten Hand in Hand gehen!<br></h3>
         <h4>Neben unseren komfortablen Unterkünften bieten wir auch ein umfangreiches Sport- und Wellnessangebot.<br>

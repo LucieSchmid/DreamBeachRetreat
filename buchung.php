@@ -76,7 +76,7 @@ session_start();
                             <input type="radio" name="sicher" value="nein"> Nein, die folgenden Daten sind nicht richtig
                             <br>
                             <br>
-                            <input type="submit" name="bestaetigen" value="bestätigen">
+                            <input type="submit" name="bestaetigen" value="Bestätigen">
                         </form>
                     <?php
                     }
@@ -147,7 +147,7 @@ session_start();
                             </tr>
                         </table>
                         <br>
-                        <input type="submit" name="submit" value="jetzt buchen">
+                        <input type="submit" name="submit" value="Jetzt buchen">
                     </form>
             <?php
                 }
