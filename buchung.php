@@ -147,7 +147,7 @@ session_start();
                             </tr>
                         </table>
                         <br>
-                        <input type="submit" name="submit" value="Jetzt buchen">
+                        <input type="submit" name="submit" value="Jetzt buchen" class="button">
                     </form>
             <?php
                 }

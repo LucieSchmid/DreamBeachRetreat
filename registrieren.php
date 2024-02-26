@@ -85,7 +85,7 @@
 
             <br>
 
-            <input type="submit" value="Registrieren" name="registrieren">
+            <input type="submit" value="Registrieren" name="registrieren" class="button">
         </form>
 </body>
 

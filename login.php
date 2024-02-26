@@ -114,7 +114,7 @@ session_start();
                 <label for="passwort">Passwort:</label>
                 <input type="password" id="passwort" name="passwort" required><br><br>
 
-                <input type="submit" value="Login" name="login">
+                <input type="submit" value="Login" name="login" class="button">
             </form>
 
     <?php

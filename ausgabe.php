@@ -70,7 +70,7 @@ session_start();
 
 
         <form method="post">
-            <input type="submit" name="erneutBuchen" value="erneut buchen" />
+            <input type="submit" name="erneutBuchen" value="erneut buchen" class="button" />
         </form>
     <?php
 
