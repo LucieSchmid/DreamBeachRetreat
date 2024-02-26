@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="stand1.css">
+    <link rel="stylesheet" type="text/css" href="standf.css">
 </head>
 
 <body>
@@ -84,7 +84,7 @@ session_start();
             <h2>Wellness-Angebote</h2><br>
             <i>Hinweis: Die Wellnessangebote gibt es an egal welchen Wochentag zur Verfügung.</i>
             <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
-
+                <br>
                 <label>Wellness-Art:</label><br><br>
 
                 <?php
