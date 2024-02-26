@@ -11,7 +11,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anmeldung</title>
-    <link rel="stylesheet" type="text/css" href="stand1.css">
+    <link rel="stylesheet" type="text/css" href="standf.css">
 </head>
 
 <body>
@@ -114,7 +114,7 @@ session_start();
                 <label for="passwort">Passwort:</label>
                 <input type="password" id="passwort" name="passwort" required><br><br>
 
-                <input type="submit" value="Login" name="login">
+                <input type="submit" value="Login" name="login" class="button">
             </form>
 
     <?php

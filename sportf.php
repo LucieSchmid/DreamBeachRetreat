@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="stand1.css">
+    <link rel="stylesheet" type="text/css" href="standf.css">
     <title>Document</title>
 </head>
 
@@ -123,6 +123,66 @@ session_start();
             <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 
                 <label>Wassersport:</label><br>
+
+
+                <?php
+                $preis;
+
+
+                require_once('db.php');
+                try {
+                    $statement = $pdo->prepare("SELECT * FROM sportf where gruppe = 'Wassersport'");
+                    $statement->execute();
+
+                    if ($statement->rowCount() > 0) {
+                        while ($row = $statement->fetch()) {
+                            echo '<input type="checkbox" name="wasser[]" value="' . $row['art'] . '">';
+
+                            echo 'Art: ' . $row['art'] . '<br>';
+                            echo 'Preis: ' . $row['preis'] . '€<br>';
+                            echo 'Wochentag: ' . $row['wochentag'] . '<br>';
+                            echo 'Uhrzeit: ' . $row['uhrzeit'] . '<br><br>';
+                        }
+                    } else {
+                        echo "Keine Sport-Angebote gefunden.";
+                    }
+                } catch (PDOException $ex) {
+                    die("Fehler beim Ausgeben der Daten!");
+                }
+
+                ?>
+
+                <label>Landsport:</label><br>
+
+                <?php
+                require_once('db.php');
+                try {
+                    $statement = $pdo->prepare("SELECT * FROM sportf where gruppe = 'Landsport'");
+                    $statement->execute();
+
+                    if ($statement->rowCount() > 0) {
+                        while ($row = $statement->fetch()) {
+                            echo '<input type="checkbox" name="land[]" value="' . $row['art'] . '">';
+
+                            echo 'Art: ' . $row['art'] . '<br>';
+                            echo 'Preis: ' . $row['preis'] . '€<br>';
+                            echo 'Wochentag: ' . $row['wochentag'] . '<br>';
+                            echo 'Uhrzeit: ' . $row['uhrzeit'] . '<br><br>';
+
+                        }
+                    } else {
+                        echo "Keine Sport-Angebote gefunden.";
+                    }
+                } catch (PDOException $ex) {
+                    die("Fehler beim Ausgeben der Daten!");
+                }
+
+                ?>
+
+
+
+                <!--
+
                 <input type="checkbox" value="Stand-up Paddeln" name="wasser[]">Stand-up Paddeln<br>
                 Wochentag: Samstags<br>
                 Uhrzeit: 10:00 Uhr<br>
@@ -152,7 +212,9 @@ session_start();
                 Preis: 20.00€
                 <br><br><br>
 
-                <input type="submit" value="Buchen" name="buchen">
+        -->
+
+                <input type="submit" value="Buchen" name="buchen" class="button">
 
             </form>
 
