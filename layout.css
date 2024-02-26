@@ -91,3 +91,7 @@ i {
     text-align: center;
     color: white;
 }
+
+.fa::before{
+     transition: ease-in-out 0.25s;
+}
