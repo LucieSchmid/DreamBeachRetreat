@@ -49,8 +49,8 @@ session_start();
             echo $e->getMessage();
             die("Fehler beim buchen.");
         }
-        echo "<h2 style='color:rgb(8,48,69)';>Vielen Dank für das Bestätigen ihrer Daten. Ihre Buchung konnte erfolgreich durchgeführt werden.
-        <br>Hier wartet alles nurmehr auf sie!</h2>";
+        echo "<h3 style='color:rgb(255,255,255)';>Vielen Dank für das Bestätigen ihrer Daten. Ihre Buchung konnte erfolgreich durchgeführt werden.
+        <br>Hier wartet alles nurmehr auf sie!</h3>";
         echo "<h3>Entdecken Sie unser Hotel, wo Erholung und Aktivitäten Hand in Hand gehen!<br></h3>
         <h4>Neben unseren komfortablen Unterkünften bieten wir auch ein umfangreiches Sport- und Wellnessangebot.<br>
         Von Fitnessräumen bis hin zu entspannenden Spa-Behandlungen - wir haben alles, um Ihren Aufenthalt unvergesslich zu machen.<br>
@@ -60,9 +60,9 @@ session_start();
         <br> Dann buchen Sie sich doch gleich ihr Zusatzangebot GRATIS zu ihrem Aufenthalt hinzu.
         <br>
         <br>
-        <a link href='wellnessf.php'>Klicken Sie hier </a>, um unser Wellnessangebot zu nutzen.
+        <a link href='wellnessf.php' style='color:#A0EEFE'>Klicken Sie hier </a>, um unser Wellnessangebot zu nutzen.
         <br>
-        <a link href='sportf.php'>Klicken Sie hier </a>, um unser Sportangebot zu nutzen.";
+        <a link href='sportf.php' style='color:#A0EEFE'>Klicken Sie hier </a>, um unser Sportangebot zu nutzen.";
     } else { //Wenn kunde beim Bestätigen auf nein klickt und seine EInträge ausbessern möchte
     ?>
         <h3>Keine Sorge, klicken Sie einfach auf <i>erneut buchen.</i><br></div>Ihre bisherigen Einträge
