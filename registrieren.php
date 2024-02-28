@@ -77,7 +77,8 @@
                     <th><label for="email">E-Mail:</label></th>
                     <td><input type="email" class="larger-input" name="email" id="email" value="<?php if (!empty($auth_email)) {
                                                                                                     echo "$auth_email";
-                                                                                                } ?>"></td>
+                                                                                                } ?>">
+                    </td>
                 </tr>
 
                 <tr>

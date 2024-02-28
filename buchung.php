@@ -149,7 +149,7 @@ session_start();
                             </tr>
                         </table>
                         <br>
-                        <input type="submit" name="submit" value="Jetzt buchen" class="button">
+                        <input type="submit" name="submit" class="button" value="Jetzt buchen" class="button">
                     </form>
             <?php
                 }
