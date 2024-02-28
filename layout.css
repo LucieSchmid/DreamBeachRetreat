@@ -4,6 +4,8 @@ body {
     background-size: cover;
     background-position: center;
     backdrop-filter: blur(5px);
+    font-size: 20px;
+    overflow-x: hidden;
 }
 
 header {
@@ -88,4 +90,8 @@ i {
 .zimmer{
     text-align: center;
     color: white;
+}
+
+.fa::before{
+     transition: ease-in-out 0.25s;
 }

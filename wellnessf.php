@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="stand1.css">
+    <link rel="stylesheet" type="text/css" href="standf.css">
 </head>
 
 <body>
@@ -84,15 +84,33 @@ session_start();
             <h2>Wellness-Angebote</h2><br>
             <i>Hinweis: Die Wellnessangebote gibt es an egal welchen Wochentag zur Verfügung.</i>
             <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
+                <br>
+                <label>Wellness-Art:</label><br><br>
 
-                <label>Wellness-Art:</label><br>
-                <input type="radio" name="art" value="Massage (alles)">Massage (alles)<br>Preis: 45,00€ <br>Uhrzeit: 19:00 Uhr<br><br>
-                <input type="radio" name="art" value="Thai-Massage" checked>Tai-Massage <br>Preis: 30,00€<br>Uhrzeit: 20:00 Uhr<br><br>
-                <input type="radio" name="art" value="Rückenmassage">Rückenmassage <br>Preis: 25,00€<br>Uhrzeit: 21:00 Uhr<br><br>
-                <input type="radio" name="art" value="Fußmassage"> Fußmassage<br> Preis: 25,00€<br>Uhrzeit: 20:30 Uhr
-                <br><br>
+                <?php
+                require_once('db.php');
+                try {
+                    $statement = $pdo->prepare("SELECT * FROM wellnessf");
+                    $statement->execute();
 
-                <input type="submit" value="Buchen" name="buchen">
+                    if ($statement->rowCount() > 0) {
+                        while ($row = $statement->fetch()) {
+                            echo '<input type="radio" name="art" value="' . $row['art'] . '">';
+
+                            echo 'Art: ' . $row['art'] . '<br>';
+                            echo 'Preis: ' . $row['preis'] . '€<br>';
+                            echo 'Uhrzeit: ' . $row['uhrzeit'] . '<br><br>';
+                        }
+                    } else {
+                        echo "Keine Wellness-Angebote gefunden.";
+                    }
+                } catch (PDOException $ex) {
+                    die("Fehler beim Ausgeben der Daten!");
+                }
+
+                ?>
+
+                <input type="submit" value="Buchen" name="buchen" class="button">
 
             </form>
 
@@ -100,6 +118,7 @@ session_start();
     <?php
         }
     }
+
     ?>
 
 </body>

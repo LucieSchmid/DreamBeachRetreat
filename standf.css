@@ -36,3 +36,9 @@ p {
     color: aliceblue;
 }
 
+.button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: rgba(57, 166, 229, 0.668);
+}
+

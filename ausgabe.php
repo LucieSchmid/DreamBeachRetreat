@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ausgabe</title>
-    <link rel="stylesheet" type="text/css" href="stand1.css">
+    <link rel="stylesheet" type="text/css" href="standf.css">
 </head>
 
 <body>
@@ -70,7 +70,7 @@ session_start();
 
 
         <form method="post">
-            <input type="submit" name="erneutBuchen" value="erneut buchen" />
+            <input type="submit" name="erneutBuchen" value="erneut buchen" class="button" />
         </form>
     <?php
 
