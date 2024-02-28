@@ -54,27 +54,29 @@ session_start();
 
                 ?>
                         <form enctype="multipart/form-data" method="post" action="ausgabe.php">
-                            <h2> Vielen Dank für ihre Buchung!<br>Wir freuen uns sehr dass sie sich für einen Urlaub
-                                bei Dream Beach Retreat entschieden haben.</h2>
+                            <h3> Vielen Dank für ihre Buchung!<br>Wir freuen uns sehr dass sie sich für einen Urlaub
+                                bei Dream Beach Retreat entschieden haben.</h3>
                             Bitte kontrollieren Sie nochamls folgende Daten auf ihre Richtigkeit.<br>Dies ist ein essentieler
                             Schritt für die reibungslose Abwicklung ihrer Urlaubsbuchung:
                             <br>
-                            <?php
-                            echo "Ihr Zuname lautet: <b>" . $_SESSION['nachname'] . "</b><br>";
-                            echo "Ihr Vorname lautet: <b>" . $_SESSION['vorname'] . "</b><br>";
-                            echo "Ihre Anschrift lautet: <b>" . $_SESSION['anschrift'] . "</b><br>";
-                            echo "Ihr Wohnort lautet: <b>" . $_SESSION['ort'] . "</b><br>";
-                            echo "Ihre Telefonnummer lautet: <b>" . $_SESSION['tel'] . "</b><br>";
-                            echo "Sie sind <b>" . $_SESSION['alter'] . "</b> Jahre alt<br>";
-                            echo "Sie wollen <b>" . $_SESSION['zimmerAnz'] . "</b> Zimmer buchen. Welche jeweils <b>" . $_SESSION['personenAnz'] . "</b> beherbergen<br>";
-                            echo "Sie wünschen sich eine <b>" . $_SESSION['verpflegung'] . "</b><br>";
-                            echo "Ihr Urlaub beginnt: <b>" . $_SESSION['anreise'] . "</b><br>";
-                            echo "Ihr Urlaub endet: <b>" . $_SESSION['abreise'] . "</b><br>";
-                            ?>
+                            <br>
+                            <table>
+                                <tr><td>Ihr Zuname lautet </td><td><?php echo $_SESSION['nachname'];?> </td></tr>
+                                <tr><td>Ihr Vorname lautet </td><td><?php echo $_SESSION['vorname'];?> </td></tr>
+                                <tr><td>Ihre Anschrift lautet </td><td><?php echo $_SESSION['anschrift'];?> </td></tr>
+                                <tr><td>Ihr Wohnort lautet </td><td><?php echo $_SESSION['ort'];?> </td></tr>
+                                <tr><td>Ihre Telefonnummer lautet </td><td><?php echo $_SESSION['tel'];?> </td></tr>
+                                <tr><td>Sie sind </td><td><?php echo $_SESSION['alter']." Jahre alt";?> </td></tr>
+                                <tr><td>Sie wollen </td><td><?php echo $_SESSION['zimmerAnz']." Zimmer buchen";?> </td></tr>
+                                <tr><td>Welche jeweils </td><td><?php echo $_SESSION['personenAnz']." Personen beherbergt";?> </td></tr>
+                                <tr><td>Sie wünschen sich eine </td><td><?php echo $_SESSION['verpflegung'];?> </td></tr>
+                                <tr><td>Ihr Urlaub beginnt am </td><td><?php echo $_SESSION['anreise'];?> </td></tr>
+                                <tr><td>Ihr Urlaub endet am </td><td><?php echo $_SESSION['abreise'];?> </td></tr>
+                            </table>
+                            <br>
                             <input type="radio" name="sicher" value="ja"> Ja, folgende Daten sind richtig
                             <br>
                             <input type="radio" name="sicher" value="nein"> Nein, die folgenden Daten sind nicht richtig
-                            <br>
                             <br>
                             <input type="submit" name="bestaetigen" value="Bestätigen">
                         </form>
@@ -82,11 +84,11 @@ session_start();
                     }
                 } else {
                     ?>
-                    <h3>
+                    <div style="font-size: 25;">
                         Buchen Sie jetzt! Sie sind nur noch wenige Mausklicks davon entfernt,
                         den Urlaub Ihrer Träume zu erleben. Damit wir Ihren Aufenthalt so traumhaft wie möglich gestalten können,
                         bitten wir Sie, uns einige Wünsche für Ihren Urlaub mitzuteilen.
-                    </h3>
+                   </div>
 
                     <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
                         <p>Bitte beantworten Sie folgende Fragen:</p>
