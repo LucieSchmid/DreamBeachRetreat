@@ -93,38 +93,38 @@ session_start();
                         <table>
                             <tr>
                                 <td><label for="nachname"> Wie lautet ihr Zuname? </label></td>
-                                <td><input type="text" id="nachname" name="nachname" value="<?php if (!empty($nachname)) {
+                                <td><input type="text" id="nachname"  class="larger-input"  name="nachname" value="<?php if (!empty($nachname)) {
                                                                                                 echo "$nachname";
                                                                                             } ?>" required></td>
 
                             </tr>
                             <tr>
                                 <td><label for="vorname">Wie lautet ihr Vorname? </label></td>
-                                <td><input type="text" id="vorname" name="vorname" required></td>
+                                <td><input type="text"  class="larger-input"  id="vorname" name="vorname" required></td>
                             </tr>
                             <tr>
                                 <td><label for="anschrift">Wie lautet ihre Anschrift(Straße & Hausnummer(Stockwerk/Tür))? </label></td>
-                                <td><input type="text" id="anschrift" name="anschrift" required></td>
+                                <td><input type="text"  class="larger-input" id="anschrift" name="anschrift" required></td>
                             </tr>
                             <tr>
                                 <td><label for="ort">In welchem Ort wohnen Sie (Wohnort & PLZ)? </label></td>
-                                <td><input type="text" id="ort" name="ort" required></td>
+                                <td><input type="text"  class="larger-input" id="ort" name="ort" required></td>
                             </tr>
                             <tr>
                                 <td><label for="tel">Wie lautet ihre Telefonnummer? </label></td>
-                                <td><input type="text" id="tel" name="tel" required></td>
+                                <td><input type="text"  class="larger-input" id="tel" name="tel" required></td>
                             </tr>
                             <tr>
                                 <td><label for="alter">Wie alt sind Sie? </label></td>
-                                <td><input type="number" id="alter" name="alter" min="18" required></td>
+                                <td><input type="number"  class="larger-input" id="alter" name="alter" min="18" required></td>
                             </tr>
                             <tr>
                                 <td><label for="zimmerAnz">Wie viele Zimmer wollen Sie buchen? </label></td>
-                                <td><input type="number" id="zimemrAnz" name="zimmerAnz" min="1" required></td>
+                                <td><input type="number"  class="larger-input" id="zimemrAnz" name="zimmerAnz" min="1" required></td>
                             </tr>
                             <tr>
                                 <td><label for="personenAnz">Wie viele Personen sollten diese Zimmer jeweils beherbergen? </label></td>
-                                <td><input type="number" id="personenAnz" name="personenAnz" min="1" required></td>
+                                <td><input type="number"  class="larger-input" id="personenAnz" name="personenAnz" min="1" required></td>
                             </tr>
                             <tr>
                                 <td><label for="verpflegung">Welche Art der Verpflegung wünschen Sie?</label></td>
@@ -135,14 +135,14 @@ session_start();
                             </tr>
                             <tr>
                                 <td><label for="anreise">Wann beginnt ihr Urlaub bei Dream Beach Retreat? </label></td>
-                                <td><input type="date" id="anreise" name="anreiseDatum" required />
+                                <td><input type="date"  id="anreise" name="anreiseDatum" required />
                                     <input type="time" id="anreise" name="anreiseZeit" required />
                                 </td>
                             </tr>
                             <tr>
                                 <td><label for="abreise">Wann endet ihr Urlaub bei Dream Beach Retreat? </label></td>
-                                <td><input type="date" id="abreise" name="abreiseDatum" required />
-                                    <input type="time" id="abreise" name="abreiseZeit" required />
+                                <td><input type="date"  id="abreise" name="abreiseDatum" required />
+                                    <input type="time"  id="abreise" name="abreiseZeit" required />
                                 </td>
                             </tr>
                         </table>

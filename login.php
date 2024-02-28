@@ -109,12 +109,18 @@ session_start();
 
                 <h3>Anmeldedaten</h3>
 
-                <label for="email">E-Mail:</label>
-                <input type="email" id="email" name="email" value="" required><br>
-                <label for="passwort">Passwort:</label>
-                <input type="password" id="passwort" name="passwort" required><br><br>
-
-                <input type="submit" value="Login" name="login" class="button">
+                <table>
+                    <tr>
+                        <th><label for="email">E-Mail:</label></th>
+                        <td><input type="email" class="larger-input" id="email" name="email" value="" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="passwort">Passwort:</label></th>
+                        <td><input type="password" class="larger-input" id="passwort" name="passwort" required></td>
+                    </tr>
+                </table>
+                <br>
+                        <input type="submit" value="Login" name="login" class="button">
             </form>
 
     <?php
