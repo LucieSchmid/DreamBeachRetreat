@@ -74,7 +74,7 @@
             <h3>Anmeldedaten</h3>
             <table>
                 <tr>
-                    <th><label for="email">E-Mail:</label></th>
+                    <td><label for="email">E-Mail:</label></td>
                     <td><input type="email" class="larger-input" name="email" id="email" value="<?php if (!empty($auth_email)) {
                                                                                                     echo "$auth_email";
                                                                                                 } ?>">
@@ -82,11 +82,11 @@
                 </tr>
 
                 <tr>
-                    <th><label for="passwort">Passwort:</label></th>
+                    <td><label for="passwort">Passwort:</label></td>
                     <td><input type="password" class="larger-input" id="passwort" name="passwort"></td>
 
                 <tr>
-                    <th><label for="passwortWH">Passwort (Wiederholung):</label></th>
+                    <td><label for="passwortWH">Passwort (Wiederholung):</label></td>
                     <td><input type="password" class="larger-input" id="passwortWH" name="passwortWH"></td>
                 </tr>
             </table>

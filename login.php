@@ -111,11 +111,11 @@ session_start();
 
                 <table>
                     <tr>
-                        <th><label for="email">E-Mail:</label></th>
+                        <td><label for="email">E-Mail:</label></td>
                         <td><input type="email" class="larger-input" id="email" name="email" value="" required></td>
                     </tr>
                     <tr>
-                        <th><label for="passwort">Passwort:</label></th>
+                        <td><label for="passwort">Passwort:</label></td>
                         <td><input type="password" class="larger-input" id="passwort" name="passwort" required></td>
                     </tr>
                 </table>
