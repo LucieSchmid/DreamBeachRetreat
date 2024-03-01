@@ -1,20 +1,28 @@
 label{
-    font-weight: bold;
     width: 300px;
 }
 
 body{
-    background-color: rgb(201,233,247);
+    background-color: hsl(198, 74%, 88%);
+    background-image: url(images/hintergrund.jpeg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     font-size: 25px;
+    color:aliceblue;
 }
 
 h1{
-    color: rgb(57, 166, 229);
+    color: rgb(121, 191, 231);
 }
 
 h2{
-    color:rgb(8, 48, 69);
+    color:rgb(255, 255, 255);
 
+}
+
+h3{
+    color:aliceblue;
 }
 
 .runde-ecken {
@@ -25,11 +33,16 @@ h2{
 
 p {
     font-size: 25px;
+    color: aliceblue;
 }
 
 .button {
     padding: 10px 20px;
     font-size: 18px;
-    background-color: rgba(57, 166, 229, 0.668);
+    background-color: #A0EEFE;
 }
 
+.larger-input {
+    height: 30px; 
+    font-size: 16px; 
+  }

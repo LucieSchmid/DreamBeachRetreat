@@ -72,16 +72,23 @@
         <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 
             <h3>Anmeldedaten</h3>
-            <label for="email">E-Mail:</label>
-            <input type="email" name="email" id="email" value="<?php if (!empty($auth_email)) {
-                                                                    echo "$auth_email";
-                                                                } ?>"><br>
+            <table>
+                <tr>
+                    <td><label for="email">E-Mail:</label></td>
+                    <td><input type="email" class="larger-input" name="email" id="email" value="<?php if (!empty($auth_email)) {
+                                                                                                    echo "$auth_email";
+                                                                                                } ?>"></td>
+                </tr>
 
-            <label for="passwort">Passwort:</label>
-            <input type="password" id="passwort" name="passwort"><br>
+                <tr>
+                    <td><label for="passwort">Passwort:</label></td>
+                    <td><input type="password" class="larger-input" id="passwort" name="passwort"></td>
 
-            <label for="passwortWH">Passwort (Wiederholung):</label>
-            <input type="password" id="passwortWH" name="passwortWH"><br>
+                <tr>
+                    <td><label for="passwortWH">Passwort (Wiederholung):</label></td>
+                    <td><input type="password" class="larger-input" id="passwortWH" name="passwortWH"></td>
+                </tr>
+            </table>
 
             <br>
 
