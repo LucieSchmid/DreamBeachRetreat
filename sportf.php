@@ -131,9 +131,10 @@ session_start();
 
                 require_once('db.php');
                 try {
+                    
                     $statement = $pdo->prepare("SELECT * FROM sportf where gruppe = 'Wassersport'");
                     $statement->execute();
-
+                    
                     if ($statement->rowCount() > 0) {
                         while ($row = $statement->fetch()) {
                             echo '<input type="checkbox" name="wasser[]" value="' . $row['art'] . '">';
@@ -179,40 +180,6 @@ session_start();
 
                 ?>
 
-
-
-                <!--
-
-                <input type="checkbox" value="Stand-up Paddeln" name="wasser[]">Stand-up Paddeln<br>
-                Wochentag: Samstags<br>
-                Uhrzeit: 10:00 Uhr<br>
-                Preis: 25.00€<br><br>
-                <input type="checkbox" value="Segeln" name="wasser[]">Segeln<br>
-                Wochentag: Freitags<br>
-                Uhrzeit: 14:00 Uhr<br>
-                Preis: 25.00€<br><br>
-                <input type="checkbox" value="Surfen" name="wasser[]">Surfen<br>
-                Wochentag: Donnerstags<br>
-                Uhrzeit: 10:00 Uhr<br>
-                Preis: 25.00€
-                <br><br><br><br>
-
-                <label>Landsport:</label><br>
-                <input type="checkbox" value="Volleyball" name="land[]">Volleyball<br>
-                Wochentag: Montags<br>
-                Uhrzeit: 15:00 Uhr<br>
-                Preis: 20.00€<br><br>
-                <input type="checkbox" value="Tennis" name="land[]">Tennis<br>
-                Wochentag: Dienstags<br>
-                Uhrzeit: 16:00 Uhr<br>
-                Preis: 20.00€<br><br>
-                <input type="checkbox" value="Basketball" name="land[]">Basketball<br>
-                Wochentag: Mittwochs<br>
-                Uhrzeit: 09:00 Uhr<br>
-                Preis: 20.00€
-                <br><br><br>
-
-        -->
 
                 <input type="submit" value="Buchen" name="buchen" class="button">
 
