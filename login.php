@@ -21,18 +21,13 @@ session_start();
 
 
 <body>
-    <header>
-        <!-- <h1>
-            <div style="float:left; padding-top:5px; margin: 0px;"><a href="hauptseite.html"> <img class="runde-ecken" src="images/logo.png" /></a></div>
-            Dream Beach Retreat</h1>
-            <h2 style="padding-top: 0px; margin: 0px;">Login</h2>
-        -->
-        <li class="hintergrund" style="display: grid; grid-template-columns: 100px ; grid-template-rows: 50px 50px; padding-bottom: 10px; ">
+    <header class="hintergrund">
+        <i class="fas fa-arrow-left" data-bs-toggle="tooltip" data-bs-placement="right" title="Klicken Sie hier um zurückzukehren!" onclick="history.back()"></i>
+        <li style="display: grid; grid-template-columns: 100px; grid-template-rows: 50px 50px; padding-bottom: 10px;">
             <a href="hauptseite.html"><img src="images/logo.png" width="60" height="60" alt="Logo" class="img-fluid rounded m-4" aligen="left" style="grid-row: 1 / 2"></a>
             <h1 style="grid-row: 1; grid-column: 2; text-align: left; margin-top: 20px;">Dream Beach Retreat</h1>
             <i style="grid-row: 2 ; grid-column: 2; text-align: left; margin-top: 10px; padding-top: 4px;">Entspannen, Auftanken und Genießen - Dein Rückzugsort am Strand.</i>
         </li>
-
     </header>
     <?php
 
@@ -115,7 +110,6 @@ session_start();
         if ($formular_anzeigen) {
 
     ?>
-            <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 
             <div class="p-5 h-100 d-flex align-items-center justify-content-center">
                 <div class="p-5 border1">
