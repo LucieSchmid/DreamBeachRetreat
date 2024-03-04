@@ -79,11 +79,11 @@ session_start();
                         }
 
 
-                            echo "<h1>Dream Beach Retreat - Kontaktaufnahme </h1>";
-                            echo "<p>Vielen Dank für Ihre Nachricht</p><br>";
+                            echo "<h2>Kontaktaufnahme </h2>";
+                            echo "<p>Vielen Dank für Ihre Nachricht</p>";
                             echo $nachname . " " . $vorname . "<br>";
 
-                        echo "<a link href='index.php'>Zurück zur Highscore-Liste</a>";
+                        echo "<a link href='hauptseite.html'>Zurück zur Hauptseite</a>";
                     } catch (PDOException $e) {
                         echo "Der neue Highscore konnte nicht gespeichert werden.";
                     }
@@ -101,7 +101,7 @@ session_start();
 
         <h2>Kontaktformular</h2><br>
         <i>Bitte geben Sie, falls Sie Beschwerden oder Wünsche haben, diese in diesem Formular an.</i>
-        <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
+        <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
             <br>
             <table>
                 <tr>
@@ -121,7 +121,7 @@ session_start();
 
                 <tr>
                     <td><label>(*)Nachricht:</label></td>
-                    <td><input type="text-area" class="area" id="area" name="nachricht" required></td>
+                    <td><textarea class="nachricht" name="nachricht" required></textarea></td>
                 </tr>
 
                 <tr>
