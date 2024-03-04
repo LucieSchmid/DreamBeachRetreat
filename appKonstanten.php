@@ -1,4 +1,4 @@
 <?php
-    define('GW_IMAGEPFAD', 'screens/');
-    define('GW_MAXDATEIGROESSE', 32768); //32 KB
+    define('GW_IMAGEPFAD', 'kontaktbilder/');
+    define('GW_MAXDATEIGROESSE', 100000); 
 ?>
