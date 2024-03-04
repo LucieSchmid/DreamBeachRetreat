@@ -131,9 +131,10 @@ session_start();
 
                 require_once('db.php');
                 try {
+                    
                     $statement = $pdo->prepare("SELECT * FROM sportf where gruppe = 'Wassersport'");
                     $statement->execute();
-
+                    
                     if ($statement->rowCount() > 0) {
                         while ($row = $statement->fetch()) {
                             echo '<input type="checkbox" name="wasser[]" value="' . $row['art'] . '">';
