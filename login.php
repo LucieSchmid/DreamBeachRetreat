@@ -115,27 +115,7 @@ session_start();
         if ($formular_anzeigen) {
 
     ?>
-
-            <h2>Login</h2>
-            <br>
             <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
-                <p>Solltest Du noch nicht registriert sein, dann klicke <a href="registrieren.php">hier</a></p>
-
-                <h3>Anmeldedaten</h3>
-
-                <table>
-                    <tr>
-                        <td><label for="email">E-Mail:</label></td>
-                        <td><input type="email" class="larger-input" id="email" name="email" value="" required></td>
-                    </tr>
-                    <tr>
-                        <td><label for="passwort">Passwort:</label></td>
-                        <td><input type="password" class="larger-input" id="passwort" name="passwort" required></td>
-                    </tr>
-                </table>
-                <br>
-                        <input type="submit" value="Login" name="login" class="button">
-            </form>
 
             <div class="p-5 h-100 d-flex align-items-center justify-content-center">
                 <div class="p-5 border1">
