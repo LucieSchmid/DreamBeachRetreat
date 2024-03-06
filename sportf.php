@@ -15,7 +15,11 @@ session_start();
 
     <script src="https://kit.fontawesome.com/1456f04639.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="standf.css">
+<<<<<<< HEAD
+    <title>Sport</title>
+=======
 
+>>>>>>> ac053ca693b5001b6c434026217c09f0a936fdc4
 </head>
 
 <body>
