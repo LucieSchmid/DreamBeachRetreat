@@ -9,11 +9,14 @@ im Überblick behalten*/
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1456f04639.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="standf.css">
     <title>deine Buchungen</title>
 </head>
 <body>
     <header>
+    <i class="fas fa-arrow-left" data-bs-toggle="tooltip" data-bs-placement="right" title="Klicken Sie hier um zurückzukehren!" onclick="history.back()"></i>
+
         <h1>
             <div style="float:left; padding:5px; padding-bottom:0px;"> <img class="runde-ecken" src="images/logo.png" width="150" height="150" /></div>
             Dream Beach Retreat
@@ -40,7 +43,7 @@ im Überblick behalten*/
                     echo "<tr>" .
                             "<td width=200;>" . $zeile['art'] . "</td>" .
                             "<td width=150;>" . $zeile['wochentag'] ."s". "</td>" .
-                            "<td>" . "um ".$zeile['uhrzeit'] ." Uhr". "</td>" .
+                            "<td>" . "um ".$zeile['uhrzeit'] ." Uhr"." </td>" .
                         "</tr>";
                 }
             }
