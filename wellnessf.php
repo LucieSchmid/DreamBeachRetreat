@@ -35,12 +35,12 @@ session_start();
             if (empty($_POST['art'])) {
                 echo "<h2>Die Pflichtfelder wurden nicht ausgefüllt.</h2>";
             } else {
-
                 $art = $_POST['art'];
                 $email = $_SESSION['email'];
 
-                echo "<h2>Dream Beach Retreat - Wellnessbuchung</h2>";
-                echo "<p>Vielen Dank für Ihre Buchung!</p><br>";
+                echo "<h2 style='margin: 0px;'>Dream Beach Retreat - Wellnessbuchung</h2><br><br>";
+                echo "<p style='margin-top: 0px;'>Vielen Dank für Ihre Buchung!<br>
+                <a href='hauptseite.php'>Hier</a> kommen Sie zurück zur Hauptseite</p>";
 
 
                 echo $_SESSION['email'] . "<br>";

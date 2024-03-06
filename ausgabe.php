@@ -31,8 +31,8 @@ session_start();
         //SQL-Statement aufbauen
         try {
             $statement = $pdo->prepare("INSERT INTO buchung(nachname, vorname, anschrift, ort, telefon, wieAlt, zimmer,
-                       personenProZimmer,anreise, abreise, verpflegung) 
-                       VALUES (:nachname, :vorname, :anschrift, :ort, :telefon, :wieAlt, :zimmer, :personenProZimmer, :anreise, :abreise, :verpflegung)");
+                       personenProZimmer,anreise, abreise, verpflegung, email) 
+                       VALUES (:nachname, :vorname, :anschrift, :ort, :telefon, :wieAlt, :zimmer, :personenProZimmer, :anreise, :abreise, :verpflegung, :email)");
             //alle PLatzhalter mit Werten belegen (binden)
             $statement->bindParam(":nachname", $_SESSION['nachname']);
             $statement->bindParam(":vorname", $_SESSION['vorname']);
@@ -45,6 +45,8 @@ session_start();
             $statement->bindParam(":anreise", $_SESSION['anreise']);
             $statement->bindParam(":abreise", $_SESSION['abreise']);
             $statement->bindParam(":verpflegung", $_SESSION['verpflegung']);
+
+            $statement->bindParam(":email", $_SESSION['email']);
 
             //Statement ausführen
             $statement->execute();
