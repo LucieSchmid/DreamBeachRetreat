@@ -7,7 +7,7 @@ if (isset($_SESSION['email'])) {
     session_destroy();
 }
 
-$pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/hauptseite.html';
+$pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/hauptseite.php';
 header('Location: ' . $pfad);
 
 ?>

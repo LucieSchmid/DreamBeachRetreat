@@ -94,7 +94,7 @@ session_start();
                         $_SESSION['email'] = $email;
 
 
-                        $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/hauptseite.html';
+                        $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/hauptseite.php';
                         header('Location: ' . $pfad);
                     } else {
                         echo "Überprüfen Sie Ihr Passwort";
