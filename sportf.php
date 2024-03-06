@@ -15,13 +15,13 @@ session_start();
 
     <script src="https://kit.fontawesome.com/1456f04639.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="standf.css">
-    
+
 </head>
 
 <body>
     <header>
+        <i class="fas fa-arrow-left" data-bs-toggle="tooltip" data-bs-placement="right" title="Klicken Sie hier um zurückzukehren!" onclick="history.back()"></i>
         <h1>
-         <i class="fas fa-arrow-left" data-bs-toggle="tooltip" data-bs-placement="right" title="Klicken Sie hier um zurückzukehren!" onclick="history.back()"></i>
             <div style="float:left; padding:5px;"> <img class="runde-ecken" src="images/logo.png" width="150" height="150" /></div>
             Dream Beach Retreat
         </h1>
@@ -138,10 +138,10 @@ session_start();
 
                 require_once('db.php');
                 try {
-                    
+
                     $statement = $pdo->prepare("SELECT * FROM sportf where gruppe = 'Wassersport'");
                     $statement->execute();
-                    
+
                     if ($statement->rowCount() > 0) {
                         while ($row = $statement->fetch()) {
                             echo '<input type="checkbox" name="wasser[]" value="' . $row['art'] . '">';
@@ -176,7 +176,6 @@ session_start();
                             echo 'Preis: ' . $row['preis'] . '€<br>';
                             echo 'Wochentag: ' . $row['wochentag'] . '<br>';
                             echo 'Uhrzeit: ' . $row['uhrzeit'] . '<br><br>';
-
                         }
                     } else {
                         echo "Keine Sport-Angebote gefunden.";
