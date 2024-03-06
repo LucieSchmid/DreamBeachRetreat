@@ -46,16 +46,16 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="zimmer.html">Zimmer & Apartments</a>
+                            <a class="nav-link" href="zimmer.php">Zimmer & Apartments</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="sport.html">Sportangebote</a>
+                            <a class="nav-link" href="sport.php">Sportangebote</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="wellness.html">Wellnessangebote</a>
+                            <a class="nav-link" href="wellness.php">Wellnessangebote</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="restaurant.html">Restaurant</a>
+                            <a class="nav-link" href="restaurant.php">Restaurant</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="agb.html">rechtliche Information</a>

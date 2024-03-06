@@ -10,9 +10,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontaktformular</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="https://kit.fontawesome.com/1456f04639.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="standf.css">
 </head>
@@ -89,7 +86,7 @@ session_start();
                         echo "<p>Vielen Dank für Ihre Nachricht</p>";
                         echo $nachname . " " . $vorname . "<br>";
 
-                        echo "<a link href='hauptseite.html'>Zurück zur Hauptseite</a>";
+                        echo "<a link href='hauptseite.php'>Zurück zur Hauptseite</a>";
                     } catch (PDOException $e) {
                         echo "Der neue Highscore konnte nicht gespeichert werden.";
                     }
