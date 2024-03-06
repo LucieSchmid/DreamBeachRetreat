@@ -18,10 +18,8 @@
 
 <body>
     <header>
-        <li class="hintergrund"
-            style="display: grid; grid-template-columns: 100px ; grid-template-rows: 50px 50px; padding-bottom: 10px">
-            <a href="hauptseite.html"><img src="images/logo.png" width="60" height="60" alt="Logo"
-                    class="img-fluid rounded m-4" aligen="left" style="grid-row: 1 / 2"></a>
+        <li class="hintergrund" style="display: grid; grid-template-columns: 100px ; grid-template-rows: 50px 50px; padding-bottom: 10px">
+            <a href="hauptseite.html"><img src="images/logo.png" width="60" height="60" alt="Logo" class="img-fluid rounded m-4" aligen="left" style="grid-row: 1 / 2"></a>
             <h1 style="grid-row: 1; grid-column: 2; text-align: left; margin-top: 20px;">Dream Beach Retreat</h1>
             <i style="grid-row: 2 ; grid-column: 2; text-align: left; margin-top: 10px; padding-top: 4px;">Entspannen,
                 Auftanken und Genießen - Dein Rückzugsort am Strand.</i>
@@ -35,18 +33,17 @@
                 <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="hauptseite.html">Übersicht</a>
+                            <a class="nav-link" href="hauptseite.php">Übersicht</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="zimmer.html">Zimmer & Apartments</a>
+                            <a class="nav-link" href="zimmer.php">Zimmer & Apartments</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="sport.html">Sportangebote</a>
+                            <a class="nav-link" href="sport.php">Sportangebote</a>
                         </li>
 
                         <li class="nav-item dropdown" data-bs-theme="dark">
-                            <a class="nav-link dropdown-toggle" href="wellness.html" role="button"
-                                data-bs-toggle="dropdown">Wellnessangebote</a>
+                            <a class="nav-link dropdown-toggle" href="wellness.php" role="button" data-bs-toggle="dropdown">Wellnessangebote</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#gm">Ganzkörpermassage</a></li>
                                 <li><a class="dropdown-item" href="#thai">Thai-Massage</a></li>
@@ -55,16 +52,21 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="restaurant.html">Restaurant</a>
+                            <a class="nav-link" href="restaurant.php">Restaurant</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="agb.html">rechtliche Information</a>
                         </li>
                     </ul>
-                    <a href="registrieren.php" class="btn btn-info m-1">Registrieren</a>
-                    <a href="login.php" class="btn btn-info m-1">Login</a>
-                    <a href="logout.php" class="btn btn-info m-1">Logout</a>
+                    <?php
+                    if (isset($_SESSION['email'])) {
+                        echo " <a href='logout.php' class='btn btn-info m-1'>Logout</a>";
+                    } else {
+                        echo "<a href='registrieren.php' class='btn btn-info m-1'>Registrieren</a>";
+                        echo "<a href='login.php' class='btn btn-info m-1'>Login</a>";
+                    }
+                    ?>
                 </div>
             </div>
         </nav>
@@ -224,11 +226,9 @@
                     <p>Hier findest du uns noch:</p>
                 </div>
                 <div class="text-center verlinkungen">
-                    <a link href="https://www.instagram.com/DreamBeachRetreat" target="_blank"><i
-                            class="fa fa-instagram" style="font-size:24px"></i></a>
+                    <a link href="https://www.instagram.com/DreamBeachRetreat" target="_blank"><i class="fa fa-instagram" style="font-size:24px"></i></a>
                     <i class="bi bi-instagram">DreamBeachRetreat</i>
-                    <a link href="https://www.facebook.com/DreamBeachRetreat" target="_blank"><i class="fa fa-facebook"
-                            style="font-size:24px"></i></a>
+                    <a link href="https://www.facebook.com/DreamBeachRetreat" target="_blank"><i class="fa fa-facebook" style="font-size:24px"></i></a>
                     <i class="bi bi-instagram">DreamBeachRetreat</i>
                     <a link href="https://www.pinterest.at/DreamBeachRetreat/"><i class="fa fa-pinterest"></i></a>
                     <i class="bi bi-instagram">DreamBeachRetreat</i>

@@ -36,7 +36,7 @@ session_start();
 
     if (isset($_SESSION['email'])) {
         echo "<h2>Sie sind schon angemeldet.</h2><br>
-        Klicken Sie <a href='hauptseite.html'>hier</a> um auf die Startseite wieder zurückzukehren.<br>
+        Klicken Sie <a href='hauptseite.php'>hier</a> um auf die Startseite wieder zurückzukehren.<br>
         oder Klicken Sie <a href='logout.php'>hier</a>, um sich auszuloggen.";
         $formular_anzeigen = false;
     } else {

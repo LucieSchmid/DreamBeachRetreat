@@ -19,10 +19,8 @@
 
 <body>
     <header>
-        <li class="hintergrund"
-            style="display: grid; grid-template-columns: 100px ; grid-template-rows: 50px 50px; padding-bottom: 10px">
-            <a href="hauptseite.html"><img src="images/logo.png" width="60" height="60" alt="Logo"
-                    class="img-fluid rounded m-4" aligen="left" style="grid-row: 1 / 2"></a>
+        <li class="hintergrund" style="display: grid; grid-template-columns: 100px ; grid-template-rows: 50px 50px; padding-bottom: 10px">
+            <a href="hauptseite.html"><img src="images/logo.png" width="60" height="60" alt="Logo" class="img-fluid rounded m-4" aligen="left" style="grid-row: 1 / 2"></a>
             <h1 style="grid-row: 1; grid-column: 2; text-align: left; margin-top: 20px;">Dream Beach Retreat</h1>
             <i style="grid-row: 2 ; grid-column: 2; text-align: left; margin-top: 10px; padding-top: 4px;">Entspannen,
                 Auftanken und Genießen - Dein Rückzugsort am Strand.</i>
@@ -36,32 +34,36 @@
                 <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="hauptseite.html">Übersicht</a>
+                            <a class="nav-link" href="hauptseite.php">Übersicht</a>
                         </li>
                         <li class="nav-item dropdown" data-bs-theme="dark">
-                            <a class="nav-link dropdown-toggle" href="zimmer.html" role="button"
-                                data-bs-toggle="dropdown">Zimmer & Apartments</a>
+                            <a class="nav-link dropdown-toggle" href="zimmer.php" role="button" data-bs-toggle="dropdown">Zimmer & Apartments</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#zimmer">Zimmer</a></li>
                                 <li><a class="dropdown-item" href="#apartments">Apartments</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="sport.html">Sportangebote</a>
+                            <a class="nav-link" href="sport.php">Sportangebote</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="wellness.html">Wellnessangebote</a>
+                            <a class="nav-link" href="wellness.php">Wellnessangebote</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="restaurant.html">Restaurant</a>
+                            <a class="nav-link" href="restaurant.php">Restaurant</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="agb.html">rechtliche Information</a>
+                            <a class="nav-link" href="agb.php">rechtliche Information</a>
                         </li>
                     </ul>
-                    <a href="registrieren.php" class="btn btn-info m-1">Registrieren</a>
-                    <a href="login.php" class="btn btn-info m-1">Login</a>
-                    <a href="logout.php" class="btn btn-info m-1">Logout</a>
+                    <?php
+                    if (isset($_SESSION['email'])) {
+                        echo " <a href='logout.php' class='btn btn-info m-1'>Logout</a>";
+                    } else {
+                        echo "<a href='registrieren.php' class='btn btn-info m-1'>Registrieren</a>";
+                        echo "<a href='login.php' class='btn btn-info m-1'>Login</a>";
+                    }
+                    ?>
                 </div>
             </div>
         </nav>
@@ -83,18 +85,18 @@
                     <img src="images/EZ.jpg" alt="Einzelzimmer" class="img-fluid rounded">
                 </div>
                 <div class="col-12 col-md-5 p-2">
-                        Dieses Einzelzimmer ist perfekt für einen ruhigen Entspannenden Urlaub alleine.
+                    Dieses Einzelzimmer ist perfekt für einen ruhigen Entspannenden Urlaub alleine.
                     <h5>Serviceleistungen und Ausstattung:</h5>
-                            <ul>
-                                <li>Maximal 1 Person</li>
-                                <li>Meerblick</li>
-                                <li>Badezimmer mit Dusche</li>
-                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
-                                <li>Klimaanlage</li>
-                                <li>Terrasse oder Balkon</li>
-                                <li>Haartrockner</li>
-                                <li>W-LAN</li>
-                            </ul>
+                    <ul>
+                        <li>Maximal 1 Person</li>
+                        <li>Meerblick</li>
+                        <li>Badezimmer mit Dusche</li>
+                        <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                        <li>Klimaanlage</li>
+                        <li>Terrasse oder Balkon</li>
+                        <li>Haartrockner</li>
+                        <li>W-LAN</li>
+                    </ul>
                     <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
                 </div>
             </div>
@@ -110,17 +112,17 @@
                 <div class="col-12 col-md-5 p-2">
                     Diese Doppelzimmer ist perfekt für einen ruhigen, entspannten Urlaub mit Freunden.
                     <h5>Serviceleistungen und Ausstattung:</h5>
-                            <ul>
-                                <li>Maximal 1 Person</li>
-                                <li>getrennte Betten</li>
-                                <li>Meerblick</li>
-                                <li>Badezimmer mit Dusche</li>
-                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
-                                <li>Klimaanlage</li>
-                                <li>Terrasse oder Balkon</li>
-                                <li>Haartrockner</li>
-                                <li>W-LAN</li>
-                            </ul>
+                    <ul>
+                        <li>Maximal 1 Person</li>
+                        <li>getrennte Betten</li>
+                        <li>Meerblick</li>
+                        <li>Badezimmer mit Dusche</li>
+                        <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                        <li>Klimaanlage</li>
+                        <li>Terrasse oder Balkon</li>
+                        <li>Haartrockner</li>
+                        <li>W-LAN</li>
+                    </ul>
                     <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
                 </div>
             </div>
@@ -135,16 +137,16 @@
                 <div class="col-12 col-md-5 p-2">
                     Diese Doppelzimmer ist perfekt für einen ruhigen, entspannten und romantischen Urlaub zu zweit.
                     <h5>Serviceleistungen und Ausstattung:</h5>
-                            <ul>
-                                <li>Maximal 2 Person</li>
-                                <li>Meerblick</li>
-                                <li>Badezimmer mit Dusche</li>
-                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
-                                <li>Klimaanlage</li>
-                                <li>Terrasse oder Balkon</li>
-                                <li>Haartrockner</li>
-                                <li>W-LAN</li>
-                            </ul>
+                    <ul>
+                        <li>Maximal 2 Person</li>
+                        <li>Meerblick</li>
+                        <li>Badezimmer mit Dusche</li>
+                        <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                        <li>Klimaanlage</li>
+                        <li>Terrasse oder Balkon</li>
+                        <li>Haartrockner</li>
+                        <li>W-LAN</li>
+                    </ul>
                     <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
                 </div>
             </div>
@@ -159,17 +161,17 @@
                 <div class="col-12 col-md-5 p-2">
                     Diese Familienzimmer ist perfekt für einen ruhigen, entspannten und spannenden Urlaub mit der Familie.
                     <h5>Serviceleistungen und Ausstattung:</h5>
-                            <ul>
-                                <li>Maximal 4 Person</li>
-                                <li>Zwei Zimmer mit Durchgangstür</li>
-                                <li>Meerblick</li>
-                                <li>Badezimmer mit Dusche</li>
-                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
-                                <li>Klimaanlage</li>
-                                <li>Terrasse oder Balkon</li>
-                                <li>Haartrockner</li>
-                                <li>W-LAN</li>
-                            </ul>
+                    <ul>
+                        <li>Maximal 4 Person</li>
+                        <li>Zwei Zimmer mit Durchgangstür</li>
+                        <li>Meerblick</li>
+                        <li>Badezimmer mit Dusche</li>
+                        <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                        <li>Klimaanlage</li>
+                        <li>Terrasse oder Balkon</li>
+                        <li>Haartrockner</li>
+                        <li>W-LAN</li>
+                    </ul>
                     <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
                 </div>
             </div>
@@ -184,16 +186,16 @@
                 <div class="col-12 col-md-5 p-2">
                     Diese Familienzimmer ist perfekt für einen ruhigen, entspannten und spannenden Urlaub mit der Familie.
                     <h5>Serviceleistungen und Ausstattung:</h5>
-                            <ul>
-                                <li>Maximal 5 Person</li>
-                                <li>Meerblick</li>
-                                <li>Badezimmer mit Dusche</li>
-                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
-                                <li>Klimaanlage</li>
-                                <li>Terrasse oder Balkon</li>
-                                <li>Haartrockner</li>
-                                <li>W-LAN</li>
-                            </ul>
+                    <ul>
+                        <li>Maximal 5 Person</li>
+                        <li>Meerblick</li>
+                        <li>Badezimmer mit Dusche</li>
+                        <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                        <li>Klimaanlage</li>
+                        <li>Terrasse oder Balkon</li>
+                        <li>Haartrockner</li>
+                        <li>W-LAN</li>
+                    </ul>
                     <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
                 </div>
             </div>
@@ -210,16 +212,16 @@
                 <div class="col-12 col-md-5 p-2">
                     Diese Apartment ist perfekt für einen ruhigen, entspannten und spannenden Urlaub mit der Familie oder Freunden.
                     <h5>Serviceleistungen und Ausstattung:</h5>
-                            <ul>
-                                <li>Maximal 6 Person</li>
-                                <li>Meerblick</li>
-                                <li>Badezimmer mit Dusche</li>
-                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
-                                <li>Klimaanlage</li>
-                                <li>Terrasse oder Balkon</li>
-                                <li>Haartrockner</li>
-                                <li>W-LAN</li>
-                            </ul>
+                    <ul>
+                        <li>Maximal 6 Person</li>
+                        <li>Meerblick</li>
+                        <li>Badezimmer mit Dusche</li>
+                        <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                        <li>Klimaanlage</li>
+                        <li>Terrasse oder Balkon</li>
+                        <li>Haartrockner</li>
+                        <li>W-LAN</li>
+                    </ul>
                     <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
                 </div>
             </div>
@@ -236,16 +238,16 @@
                 <div class="col-12 col-md-5 p-2">
                     Dieser Bungalow ist perfekt für einen ruhigen, entspannten und spannenden Urlaub mit der Familie oder mit Freunden.
                     <h5>Serviceleistungen und Ausstattung:</h5>
-                            <ul>
-                                <li>Maximal 8 Person</li>
-                                <li>Meerblick</li>
-                                <li>Badezimmer mit Dusche</li>
-                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
-                                <li>Klimaanlage</li>
-                                <li>Terrasse oder Balkon</li>
-                                <li>Haartrockner</li>
-                                <li>W-LAN</li>
-                            </ul>
+                    <ul>
+                        <li>Maximal 8 Person</li>
+                        <li>Meerblick</li>
+                        <li>Badezimmer mit Dusche</li>
+                        <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                        <li>Klimaanlage</li>
+                        <li>Terrasse oder Balkon</li>
+                        <li>Haartrockner</li>
+                        <li>W-LAN</li>
+                    </ul>
                     <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
                 </div>
             </div>
@@ -260,17 +262,17 @@
                 <div class="col-12 col-md-5 p-2">
                     Diese Strandvilla ist perfekt für einen ruhigen, entspannten und spannenden Urlaub mit der Familie oder mit Freunden.
                     <h5>Serviceleistungen und Ausstattung:</h5>
-                            <ul>
-                                <li>Maximal 10 Person</li>
-                                <li>Meerblick</li>
-                                <li>Pool</li>
-                                <li>Badezimmer mit Dusche</li>
-                                <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
-                                <li>Klimaanlage</li>
-                                <li>Terrasse oder Balkon</li>
-                                <li>Haartrockner</li>
-                                <li>W-LAN</li>
-                            </ul>
+                    <ul>
+                        <li>Maximal 10 Person</li>
+                        <li>Meerblick</li>
+                        <li>Pool</li>
+                        <li>Badezimmer mit Dusche</li>
+                        <li>Küche <br>Kühlschrank mit Tiefkühlmöglichkeit, Kaffeemaschine, ...</li>
+                        <li>Klimaanlage</li>
+                        <li>Terrasse oder Balkon</li>
+                        <li>Haartrockner</li>
+                        <li>W-LAN</li>
+                    </ul>
                     <a href="buchung.php" class="btn btn-info">Jetzt buchen</a>
                 </div>
             </div>

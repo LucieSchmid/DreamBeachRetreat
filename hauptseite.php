@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -23,10 +23,8 @@
 
 <body>
     <header>
-        <li class="hintergrund"
-            style="display: grid; grid-template-columns: 100px ; grid-template-rows: 50px 50px; padding-bottom: 10px; ">
-            <a href="hauptseite.html"><img src="images/logo.png" width="60" height="60" alt="Logo"
-                    class="img-fluid rounded m-4" aligen="left" style="grid-row: 1 / 2"></a>
+        <li class="hintergrund" style="display: grid; grid-template-columns: 100px ; grid-template-rows: 50px 50px; padding-bottom: 10px; ">
+            <a href="hauptseite.html"><img src="images/logo.png" width="60" height="60" alt="Logo" class="img-fluid rounded m-4" aligen="left" style="grid-row: 1 / 2"></a>
             <h1 style="grid-row: 1; grid-column: 2; text-align: left; margin-top: 20px;">Dream Beach Retreat</h1>
             <i style="grid-row: 2 ; grid-column: 2; text-align: left; margin-top: 10px; padding-top: 4px;">Entspannen,
                 Auftanken und Genießen - Dein Rückzugsort am Strand.</i>
@@ -37,8 +35,7 @@
                 <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item dropdown" data-bs-theme="dark">
-                            <a class="nav-link dropdown-toggle" href="hauptseite.html" role="button"
-                                data-bs-toggle="dropdown">Übersicht</a>
+                            <a class="nav-link dropdown-toggle" href="hauptseite.html" role="button" data-bs-toggle="dropdown">Übersicht</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#info">Informationen</a></li>
                                 <li><a class="dropdown-item" href="#mission">Mission | Vision</a></li>
@@ -63,16 +60,16 @@
                     </ul>
                 </div>
 
-    <?php
-        if(isset($_SESSION['email'])){
-           echo" <a href='logout.php' class='btn btn-info m-1'>Logout</a>";
-        }else{
-            echo"<a href='registrieren.php' class='btn btn-info m-1'>Registrieren</a>";
-            echo"<a href='login.php' class='btn btn-info m-1'>Login</a>";
-        }
-    ?>
+                <?php
+                if (isset($_SESSION['email'])) {
+                    echo " <a href='logout.php' class='btn btn-info m-1'>Logout</a>";
+                } else {
+                    echo "<a href='registrieren.php' class='btn btn-info m-1'>Registrieren</a>";
+                    echo "<a href='login.php' class='btn btn-info m-1'>Login</a>";
+                }
+                ?>
 
-                
+
             </div>
         </nav>
     </header>
@@ -126,8 +123,7 @@
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="images/familienzimmer1.jpg" class="w-100 shadow-1-strong rounded mb-4"
-                        alt="familienzimmer1" />
+                    <img src="images/familienzimmer1.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="familienzimmer1" />
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0">
@@ -175,10 +171,7 @@
 
             <!--Google map-->
             <div id="map-container-google-1" class="z-depth-1-half map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15776.534046256771!2d115.43973880275996!3d-8.678851361329656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd26da7ddc8bf63%3A0xffd3726dbaf5e2fa!2sDream%20Beach!5e0!3m2!1sde!2sat!4v1708332937313!5m2!1sde!2sat"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15776.534046256771!2d115.43973880275996!3d-8.678851361329656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd26da7ddc8bf63%3A0xffd3726dbaf5e2fa!2sDream%20Beach!5e0!3m2!1sde!2sat!4v1708332937313!5m2!1sde!2sat" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             <!--Google Maps-->
@@ -246,11 +239,9 @@
                     <p>Hier findest du uns noch:</p>
                 </div>
                 <div class="text-center verlinkungen">
-                    <a link href="https://www.instagram.com/DreamBeachRetreat" target="_blank"><i
-                            class="fa fa-instagram" style="font-size:24px"></i></a>
+                    <a link href="https://www.instagram.com/DreamBeachRetreat" target="_blank"><i class="fa fa-instagram" style="font-size:24px"></i></a>
                     <i class="bi bi-instagram">DreamBeachRetreat</i>
-                    <a link href="https://www.facebook.com/DreamBeachRetreat" target="_blank"><i class="fa fa-facebook"
-                            style="font-size:24px"></i></a>
+                    <a link href="https://www.facebook.com/DreamBeachRetreat" target="_blank"><i class="fa fa-facebook" style="font-size:24px"></i></a>
                     <i class="bi bi-instagram">DreamBeachRetreat</i>
                     <a link href="https://www.pinterest.at/DreamBeachRetreat/"><i class="fa fa-pinterest"></i></a>
                     <i class="bi bi-instagram">DreamBeachRetreat</i>
