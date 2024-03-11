@@ -27,3 +27,8 @@ img{
     border: 2px solid white;
     border-radius: 5px;
 }
+
+.border2{
+    border: 2px solid gray;
+    border-radius: 5px;
+}

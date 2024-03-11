@@ -13,25 +13,25 @@ header {
 }
 
 
-h5{
+h5 {
     text-decoration: underline rgb(201, 233, 247);
 }
 
-p{
+p {
     padding-left: 50px;
     padding-right: 50px;
 }
 
-h3{
+h3 {
     padding-left: 50px;
     padding-top: 50px;
 }
 
-iframe{
+iframe {
     padding-left: 50px;
 }
 
-hr{
+hr {
     margin-left: 50px;
     margin-right: 50px;
     border: 1px solid;
@@ -61,7 +61,7 @@ i {
     padding-right: 12px;
 }
 
-.bilder{
+.bilder {
     border-radius: 10px;
 }
 
@@ -80,18 +80,18 @@ i {
     padding: 5px;
 }
 
-.hinterZimmer{
+.hinterZimmer {
     background-color: white;
     border-radius: 10px;
 
     margin-bottom: 50px;
 }
 
-.zimmer{
+.zimmer {
     text-align: center;
     color: white;
 }
 
-.fa::before{
-     transition: ease-in-out 0.25s;
+.fa::before {
+    transition: ease-in-out 0.25s;
 }

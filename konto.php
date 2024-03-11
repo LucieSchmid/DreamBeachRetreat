@@ -20,62 +20,37 @@ session_start();
 </head>
 
 <body>
-    <div class="offcanvas offcanvas-start" id="demo">
-        <div class="offcanvas-header">
-            <h1 class="offcanvas-title">Heading</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-            <p>Some text lorem ipsum.</p>
-            <p>Some text lorem ipsum.</p>
-            <p>Some text lorem ipsum.</p>
-            <button class="btn btn-secondary" type="button">A Button</button>
-        </div>
-    </div>
+    <header class="hintergrund">
+        <i class="fas fa-arrow-left" data-bs-toggle="tooltip" data-bs-placement="right" title="Klicken Sie hier um zurückzukehren!" onclick="history.back()"></i>
+        <li style="display: grid; grid-template-columns: 100px; grid-template-rows: 50px 50px; padding-bottom: 10px;">
+            <a href="hauptseite.php"><img src="images/logo.png" width="60" height="60" alt="Logo" class="img-fluid rounded m-4" aligen="left" style="grid-row: 1 / 2"></a>
+            <h1 style="grid-row: 1; grid-column: 2; text-align: left; margin-top: 20px;">Dream Beach Retreat</h1>
+            <i style="grid-row: 2 ; grid-column: 2; text-align: left; margin-top: 10px; padding-top: 4px;">Entspannen, Auftanken und Genießen - Dein Rückzugsort am Strand.</i>
+        </li>
+    </header>
 
-    <div class="container-fluid mt-3">
-        <h3>Offcanvas Sidebar</h3>
-        <p>Offcanvas is similar to modals, except that it is often used as a sidebar.</p>
-        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
-            Open Offcanvas Sidebar
-        </button>
-    </div>
-
-
-
-
-    <div class="container mt-3">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-            Open modal
-        </button>
-    </div>
-
-    <!-- The Modal -->
-    <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Modal Heading</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    <main>
+        <div class="p-5 h-100 d-flex align-items-center justify-content-center">
+            <div class="p-5 border1">
+                <div class="h-100 d-flex align-items-center justify-content-center">
+                    <h3>Ihre Kontodaten</h3>
                 </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    Modal body..
+                <div class="h-100 d-flex align-items-center justify-content-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                    </svg>
                 </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                </div>
-
+                <table>
+                    <div class="mb-3 mt-3">
+                        <tr>
+                            <td><label for="email">E-Mail:</label></td>
+                            <td><input type="email" id="email" name="email" value="<?php echo $_SESSION['email'] ?>" ></td>
+                        </tr>
+                    </div>
+                </table>
             </div>
         </div>
-    </div>
-
-
+    </main>
 
 </body>
 

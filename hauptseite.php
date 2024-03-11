@@ -62,7 +62,7 @@ session_start();
 
                 <?php
                 if (isset($_SESSION['email'])) {
-                    echo "<a href='buchungsUebersicht.php' class='btn btn-info m-1'>Konto</a>";
+                    echo "<a href='registrieren.php' class='btn btn-info m-1' data-bs-toggle='modal' data-bs-target='#myModal'>Konto</a>";
                     echo " <a href='logout.php' class='btn btn-info m-1'>Logout</a>";
                 } else {
                     echo "<a href='registrieren.php' class='btn btn-info m-1'>Registrieren</a>";
@@ -70,9 +70,38 @@ session_start();
                 }
                 ?>
 
-
             </div>
         </nav>
+
+
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content" style="background-color: #212529;">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="color: #0DCAF0;">Ihr Konto</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div style="text-align: center;">
+                            <a href="buchungsUebersicht.php">Ihre Buchungen</a>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="konto.php">Ihre Kontodaten</a>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Schließen</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </header>
     <main>
         <!-- Carousel -->
