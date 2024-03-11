@@ -168,9 +168,9 @@ session_start();
                     </tr>
                     <tr>
                         <td><label for="verpflegung">Welche Art der Verpflegung wünschen Sie?</label></td>
-                        <td><input type="radio" id="verpflegung" name="verpflegung" value="vollpension" required> Vollpension
+                        <td><input type="radio" id="verpflegung" name="verpflegung" value="Vollpension" required> Vollpension
                             <br>
-                            <input type="radio" id="verpflegung" name="verpflegung" value="halbpension" required> Halbpension
+                            <input type="radio" id="verpflegung" name="verpflegung" value="Halbpension" required> Halbpension
                         </td>
                     </tr>
                     <tr>
