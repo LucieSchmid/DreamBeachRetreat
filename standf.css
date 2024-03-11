@@ -25,6 +25,10 @@ h3{
     color:aliceblue;
 }
 
+header{
+    margin: 0px;
+}
+
 .runde-ecken {
 	border-radius: 10px;
 	-moz-border-radius: 10px;

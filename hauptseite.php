@@ -10,8 +10,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://kit.fontawesome.com/1456f04639.js" crossorigin="anonymous"></script>
 
@@ -62,6 +62,7 @@ session_start();
 
                 <?php
                 if (isset($_SESSION['email'])) {
+                    echo "<a href='buchungsUebersicht.php' class='btn btn-info m-1'>Konto</a>";
                     echo " <a href='logout.php' class='btn btn-info m-1'>Logout</a>";
                 } else {
                     echo "<a href='registrieren.php' class='btn btn-info m-1'>Registrieren</a>";
