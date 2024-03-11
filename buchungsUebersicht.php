@@ -31,7 +31,32 @@ im Überblick behalten*/
     $email = $_SESSION['email'];
     echo "Buchungen von: $email";
     ?>
-    <h4>Ihre Sportbuchungen</h4>
+    <h3>Ihre geplanten Aufenthalte im Dream Beach Retreat:</h3>
+    <?php
+        require_once('db.php');
+        try{
+            $statement = $pdo->prepare("SELECT * FROM buchung WHERE email= '$email'");
+            $statement->execute();
+
+            echo "<table>";
+            if($statement->rowCount() > 0){
+                while($zeile = $statement->fetch()){
+                    echo "<tr>" .
+                            "<td width=230;>vom <b>" . $zeile['anreise'] . "</b></td>" .
+                            "<td width=200;>bis <b>" . $zeile['abreise']. "</b></td>" .
+                            "<td width=200;>mit <b>" . $zeile['zimmer']. "</b> Zimmern</td>" .
+                            "<td width=380;>für jeweils <b>" . $zeile['personenProZimmer']. " Personen pro Zimmer</b></td>" .
+                            "<td width=380;>und <b>" . $zeile['verpflegung']. "</b> als Verpflegungsart</td>" .
+                            "</tr>";
+                }
+            }
+            echo "</table>";
+
+        }catch(PDOException $ex){
+            die("Fehler beim Ausgeben der Daten in die Datenbank!");
+        }
+    ?>
+    <h3>Ihre Sportbuchungen:</h3>
     <?php
     require_once('db.php');
     try {
@@ -54,7 +79,7 @@ im Überblick behalten*/
     }
     ?>
 
-    <h4>Ihre Wellnessbuchungen</h4>
+    <h3>Ihre Wellnessbuchungen:</h3>
     <?php
     require_once('db.php');
     try {
