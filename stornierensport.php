@@ -30,9 +30,6 @@ require_once("autorisieren.php");
             echo "<h2>Die Pflichtfelder wurden nicht ausgefüllt.</h2>";
         } else {
 
-            
-
-
             if ($_POST['auswahl'] == "ja") {
                 require_once('db.php');
 
@@ -53,6 +50,7 @@ require_once("autorisieren.php");
             } else if ($_POST['auswahl'] == "nein") {
                 echo "<br><br>Buchung wurde nicht storniert.<br>";
                 echo "<a href='adminseite.php'> Zurück </a>";
+                exit();
             }
         }
     }
@@ -68,7 +66,7 @@ require_once("autorisieren.php");
         <!-- Verwenden Sie die GET-Variable direkt im Hidden-Feld -->
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($_GET['id'] ?? ''); ?>">
 
-        <input type="submit" value="Senden" name="senden">
+        <input type="submit" value="Senden" name="senden" class="button">
 
     </form>
 </body>
