@@ -49,6 +49,7 @@ require_once("autorisieren.php");
             } else if ($_POST['auswahl'] == "nein") {
                 echo "<br><br>Buchung wurde nicht storniert.<br>";
                 echo "<a href='adminseite.php'> Zurück </a>";
+                exit();
             }
         }
     }
@@ -61,12 +62,14 @@ require_once("autorisieren.php");
         <input type="radio" value="ja" name="auswahl"> Ja
         <input type="radio" value="nein" name="auswahl" checked> Nein <br><br>
 
-        <!-- Verwenden Sie die GET-Variable direkt im Hidden-Feld -->
+
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($_GET['id'] ?? ''); ?>">
 
         <input type="submit" value="Senden" name="senden">
 
     </form>
+
+
 </body>
 
 </html>
