@@ -30,6 +30,11 @@ session_start();
     </header>
 
     <main>
+        <p style="text-align: center;">Hier finden Sie Ihre Kontodaten<br>
+            Sollten sie Ihre E-Mailadresse ändern wollen, <a href="konakt.php">kontaktieren</a> Sie bitte uns.<br>
+            Wir wollen mit den Daten unserer Gäste gerecht umgehen, deswegen müssen Sie nur Ihre E-Mail angeben.<br>
+            Dies ist der Grund warum Sie auf dieser Seite nur Ihre E-Mail sehen können.
+        </p>
         <div class="p-5 h-100 d-flex align-items-center justify-content-center">
             <div class="p-5 border1">
                 <div class="h-100 d-flex align-items-center justify-content-center">
@@ -44,12 +49,25 @@ session_start();
                     <div class="mb-3 mt-3">
                         <tr>
                             <td><label for="email">E-Mail:</label></td>
-                            <td><input type="email" id="email" name="email" value="<?php echo $_SESSION['email'] ?>" ></td>
+                            <td><input type="email" id="email" name="email" value="<?php echo $_SESSION['email'] ?>" readonly></td>
                         </tr>
                     </div>
                 </table>
             </div>
         </div>
+
+        <div class="alert alert-warning m-5">
+            <strong>Wichtige Information für Sie!</strong><br>
+            Zuerst ein <i><strong>Dankeschön</strong></i> dafür, dass Sie bereits ein Konto bei uns angelegt haben. <br>
+            Jeder unserer Kunden, welche ein <strong>Zimmer oder Apartment</strong> gebucht haben, bekommen die Möglichkeit unsere <a href="wellness.php">Wellness-</a> und <a href="sport.php"> Sportangebote</a> <strong>kostenfrei</strong> nutzen zu können!
+        </div>
+
+        <div class="alert alert-light m-5">
+            <strong>Bewerten Sie unser Hotel</strong><br>
+            Bitte nehmen Sie sich kurz Zeit und bewerten Sie unsere Hotel-, Wellness- sowie Sportangebote.
+            Bewerten Sie jetzt <a href="bewertung.php"> hier</a>.
+        </div>
+
     </main>
 
 </body>
