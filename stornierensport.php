@@ -66,7 +66,7 @@ require_once("autorisieren.php");
         <!-- Verwenden Sie die GET-Variable direkt im Hidden-Feld -->
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($_GET['id'] ?? ''); ?>">
 
-        <input type="submit" value="Senden" name="senden">
+        <input type="submit" value="Senden" name="senden" class="button">
 
     </form>
 </body>

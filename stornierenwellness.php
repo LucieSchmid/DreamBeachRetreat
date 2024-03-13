@@ -65,7 +65,7 @@ require_once("autorisieren.php");
 
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($_GET['id'] ?? ''); ?>">
 
-        <input type="submit" value="Senden" name="senden">
+        <input type="submit" value="Senden" name="senden" class="button">
 
     </form>
 

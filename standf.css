@@ -55,3 +55,8 @@ p {
 .nachricht{
     font-size: 18px; 
 }
+
+input[type="radio"] {
+    border-color:#A0EEFE;
+    background-color: #A0EEFE;
+}
