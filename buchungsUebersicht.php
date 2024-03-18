@@ -47,14 +47,34 @@ im Überblick behalten*/
             if($statement->rowCount() > 0){
                 while($zeile = $statement->fetch()){
                     if(strtotime($zeile['anreise']) >  $heute){
+                    // Ihr Ausgangsdatum als String
+                    $date_string = $zeile['anreise'];
+                    $date_string1 = $zeile['abreise'];
+
+                    // Das Datum in ein Unix-Timestamp umwandeln
+                    $timestamp = strtotime($date_string);
+                    $timestamp1 = strtotime($date_string1);
+
+                    // Array mit den deutschen Monatsnamen definieren
+                    $german_month_names = array(
+                        "Januar", "Februar", "März", "April", "Mai", "Juni",
+                        "Juli", "August", "September", "Oktober", "November", "Dezember"
+                    );
+
+                    // Datum im gewünschten Format ausgeben
+                    $formatted_date = date("d. ", $timestamp) . $german_month_names[date("n", $timestamp) - 1] . date(" Y", $timestamp);
+                    $formatted_date1 = date("d. ", $timestamp1) . $german_month_names[date("n", $timestamp1) - 1] . date(" Y", $timestamp1);
+
+
                         echo "<tr>" .
-                            "<td width=230;>vom <b>" . $zeile['anreise'] . "</b></td>" .
-                            "<td width=200;>bis <b>" . $zeile['abreise']. "</b></td>" .
+                            "<td width=230;>vom <b>" . $formatted_date. "</b></td>" .
+                            "<td width=200;>bis <b>" . $formatted_date1. "</b></td>" .
                             "<td width=200;>mit <b>" . $zeile['zimmer']. "</b> Zimmern</td>" .
                             "<td width=380;>für jeweils <b>" . $zeile['personenProZimmer']. " Personen pro Zimmer</b></td>" .
                             "<td width=380;>mit einer <b>" . $zeile['verpflegung']. "</b> </td>" .
                             "</tr>";
                         $stehtDa = true;
+                        
                     }
                 }
             }
