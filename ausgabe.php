@@ -27,34 +27,38 @@ session_start();
     if ($sicher == "ja") {
 
         // Konfiguration für die E-Mail
-        $empfaenger = 'schmid.lucie@hakspittal.at'; // Die E-Mail-Adresse des Administrators
-        $betreff = 'Neue Buchung'; // Betreff der E-Mail
-        $nachricht = 'Es wurde eine neue Buchung getätigt. <br> Die Daten sind:
+        $empfaenger = "schmid.lucie@hakspittal.at"; // Die E-Mail-Adresse des Administrators
+        $betreff = "Neue Buchung"; // Betreff der E-Mail
+        $absender = $_SESSION['email'];
+        $mailtext = "<br>Es wurde eine neue Buchung getätigt. <br><br> Die Daten sind:
                         <table>
                             <tr>
                                 <td>Name:</td> 
-                                <td>' . $_SESSION['nachname'] . ' ' . $_SESSION['vorname'] . '</td>
+                                <td>" . $_SESSION['nachname'] . " " . $_SESSION['vorname'] . "</td>
                             </tr>
                             <tr>
                                 <td>Anreise:</td>
-                                <td>' . $_SESSION['anreise'] . '</td>
+                                <td>" . $_SESSION['anreise'] . "</td>
                             </tr>
                             <tr>
                                 <td>Abreise:</td>
-                                <td>' . $_SESSION['abreise'] . '</td>
+                                <td>" . $_SESSION['abreise'] . "</td>
                             </tr>
                             <tr>
                                 <td>Email:</td>
-                                <td>' . $_SESSION['email'] . '<td>
+                                <td>" . $_SESSION['email'] . "<td>
                             <tr>
-                        </table>'; // Nachricht der E-Mail
+                        </table>"; // Nachricht der E-Mail
+        $antwortan  = "schmid.lucie@hakspittal.at";
 
-        $header = 'From:'. $_SESSION['email'] . "\r\n" .
-                'Reply-To: hotel@example.com' . "\r\n" .
-                'X-Mailer: PHP/' . phpversion();
+       echo $empfaenger . " " . $betreff . " " . $absender . " " . $mailtext;
 
         // Senden der E-Mail
-        mail($empfaenger, $betreff, $nachricht, $header);
+        mail( $empfaenger,
+                $betreff,
+                $mailtext,
+                "From: $absender\n Reply-To: $antwortan");
+        echo "Mail wurde gesendet!";
 
         //DB Verbindung
         require_once('db.php');
