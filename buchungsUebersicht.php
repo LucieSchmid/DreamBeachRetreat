@@ -38,16 +38,24 @@ im Überblick behalten*/
             $statement = $pdo->prepare("SELECT * FROM buchung WHERE email= '$email'");
             $statement->execute();
 
+            $heute = time();
+            $count = false;
+            $stehtDa = false;
+
             echo "<table>";
+            
             if($statement->rowCount() > 0){
                 while($zeile = $statement->fetch()){
-                    echo "<tr>" .
+                    if(strtotime($zeile['anreise']) >  $heute){
+                        echo "<tr>" .
                             "<td width=230;>vom <b>" . $zeile['anreise'] . "</b></td>" .
                             "<td width=200;>bis <b>" . $zeile['abreise']. "</b></td>" .
                             "<td width=200;>mit <b>" . $zeile['zimmer']. "</b> Zimmern</td>" .
                             "<td width=380;>für jeweils <b>" . $zeile['personenProZimmer']. " Personen pro Zimmer</b></td>" .
-                            "<td width=380;>und <b>" . $zeile['verpflegung']. "</b> als Verpflegungsart</td>" .
+                            "<td width=380;>mit einer <b>" . $zeile['verpflegung']. "</b> </td>" .
                             "</tr>";
+                        $stehtDa = true;
+                    }
                 }
             }
             echo "</table>";
