@@ -62,13 +62,15 @@ session_start();
 
                 <?php
                 if (isset($_SESSION['email'])) {
-                    echo "<a href='registrieren.php' class='btn btn-info m-1' data-bs-toggle='modal' data-bs-target='#myModal'>Konto</a>";
+                    echo "<a href='konto.php' class='btn btn-info m-1' data-bs-toggle='modal' data-bs-target='#myModal'>Konto</a>";
                     echo " <a href='logout.php' class='btn btn-info m-1'>Logout</a>";
                 } else {
                     echo "<a href='registrieren.php' class='btn btn-info m-1'>Registrieren</a>";
                     echo "<a href='login.php' class='btn btn-info m-1'>Login</a>";
                 }
                 ?>
+
+                <a href='kontakt.php' class='btn btn-info m-1'>Kontakt</a>
 
             </div>
         </nav>
