@@ -31,7 +31,7 @@ session_start();
 
     <main>
         <p style="text-align: center;">Hier finden Sie Ihre Kontodaten<br>
-            Sollten sie Ihre E-Mailadresse ändern wollen, <a href="konakt.php">kontaktieren</a> Sie bitte uns.<br>
+            Sollten sie Ihre E-Mailadresse ändern wollen, <a href="kontakt.php">kontaktieren</a> Sie bitte uns.<br>
             Wir wollen mit den Daten unserer Gäste gerecht umgehen, deswegen müssen Sie nur Ihre E-Mail angeben.<br>
             Dies ist der Grund warum Sie auf dieser Seite nur Ihre E-Mail sehen können.
         </p>
