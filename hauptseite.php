@@ -71,7 +71,7 @@ session_start();
                 ?>
 
                 <a href='kontakt.php' class='btn btn-info m-1'>Kontakt</a>
-
+                <a href='adminseite.php' class='btn btn-info m-1'>Admin</a>
             </div>
         </nav>
 
