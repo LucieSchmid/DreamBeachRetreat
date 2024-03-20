@@ -44,11 +44,11 @@
                 echo "Wir bedanken uns für Ihre ehrliche Bewertung!<br>";
                 echo "<a href='hauptseite.php'>Hier kommen Sie zurück zu der Hauptseite.</a>";
                 exit();
-                
             } catch (PDOException $ex) {
                 die("Fehler beim Einfügen der Daten in die Datenbank!");
             }
         }
+    } else {
     ?>
 
         <h2>Bewerten Sie uns</h2><br>
