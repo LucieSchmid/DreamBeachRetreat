@@ -206,24 +206,24 @@ session_start();
             <hr>
             <p>Strand-Retreats befindet sich an malerischen Küstenabschnitten, oft in idyllischen Gegenden.</p>
 
-            <!--Google map-->
+            <!--Map-->
 
             <div id="meineMap" style="width: 600px; height: 400px; margin-left: 50px;">
                 <script>
-                    const map = L.map('meineMap').setView([35.8669603,10.6106847,21], 13); //[Koordinaten], Zoomfaktor
+                    const map = L.map('meineMap').setView([35.8669603,10.6106847,21], 15); //[Koordinaten], Zoomfaktor
 
                     const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         maxZoom: 19,
-                        attribution: '&copy; 4bk'
+                        attribution: '&copy; DreamBeachRetreat'
                     }).addTo(map);
 
                     const marker = L.marker([35.8669603,10.6106847,21]).addTo(map)
-                        .bindPopup('<img src="images/aussen.jpg" height="150" width="250"><h1>Dream Beach</h1>')
+                        .bindPopup('<img src="images/aussen.jpg" height="150" width="225"><h2 style="text-align:center">Dream Beach</h2>')
                         .openPopup();
                 </script>
             </div>
 
-            <!--Google Maps-->
+            <!--Map-->
         </div>
 
         <div class="hintergrund">
