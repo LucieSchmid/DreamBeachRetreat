@@ -80,7 +80,7 @@ session_start();
                                 $statement->bindParam(':email', $auth_email);
                                 $statement->execute();
                             } catch (PDOException $e) {
-                                die("ES ist ein Fehler beim Speichern des neuen Hashwertes aufgetreten!");
+                                die("Es ist ein Fehler beim Speichern des neuen Hashwertes aufgetreten!");
                             }
                             echo "<h3>Die Daten (Passwort) wurden aktualisiert!</h3>";
                         }

@@ -55,7 +55,7 @@ session_start();
                             <a class="nav-link" href="restaurant.php">Restaurant</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="agb.html">rechtliche Information</a>
+                            <a class="nav-link" href="agb.php?lang=de">rechtliche Information</a>
                         </li>
                     </ul>
                 </div>
