@@ -26,7 +26,7 @@ session_start();
         <li style="display: grid; grid-template-columns: 100px; grid-template-rows: 50px 50px; padding-bottom: 10px;">
             <a href="hauptseite.php"><img src="images/logo.png" width="60" height="60" alt="Logo" class="img-fluid rounded m-4" aligen="left" style="grid-row: 1 / 2"></a>
             <h1 style="grid-row: 1; grid-column: 2; text-align: left; margin-top: 20px;">Dream Beach Retreat</h1>
-            <i style="grid-row: 2 ; grid-column: 2; text-align: left; margin-top: 10px; padding-top: 4px;">Entspannen, Auftanken und Genießen - Dein Rückzugsort am Strand.</i>
+            <i style="grid-row: 2 ; grid-column: 2; text-align: left; margin-top: 10px; padding-top: 4px;">Relax, recharge and enjoy - your retreat on the beach.</i>
         </li>
     </header>
     <?php
@@ -36,15 +36,15 @@ session_start();
 
     if (isset($_SESSION['email'])) {
         echo "<h2>Sie sind schon angemeldet.</h2><br>
-        Klicken Sie <a href='hauptseite.php'>hier</a> um auf die Startseite wieder zurückzukehren.<br>
-        oder Klicken Sie <a href='logout.php'>hier</a>, um sich auszuloggen.";
+        Click here <a href='hauptseite.php'>hier</a> to return to the homesite.<br>
+        or click here <a href='logout.php'></a>, to logout.";
         $formular_anzeigen = false;
     } else {
 
 
         if (isset($_POST['login'])) {
             if (empty($_POST['email']) || empty($_POST['passwort'])) {
-                echo "Bitte füllen Sie das Formular vollständig aus!";
+                echo "Please fill out the form completely!";
             } else {
 
                 $auth_email = htmlspecialchars(trim($_POST['email']));
@@ -57,7 +57,7 @@ session_start();
                     $statement->bindParam(":email", $auth_email);
                     $statement->execute();
                 } catch (PDOException $e) {
-                    die("Login nicht möglich!");
+                    die("Login not possible!");
                 }
 
                 if ($statement->rowCount() > 0) {
@@ -85,7 +85,7 @@ session_start();
                             echo "<h3>Die Daten (Passwort) wurden aktualisiert!</h3>";
                         }
 
-                        echo "Login erfolgreich";
+                        echo "Login successful!";
 
                         $formular_anzeigen = false;
 
@@ -97,11 +97,11 @@ session_start();
                         $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/hauptseite.php';
                         header('Location: ' . $pfad);
                     } else {
-                        echo "Überprüfen Sie Ihr Passwort";
+                        echo "Check your password";
                         $formular_anzeigen = true;
                     }
                 } else {
-                    echo "Ihre E-Mail-Adresse ist nicht registriert.";
+                    echo "Your email address is not registered.";
                     $formular_anzeigen = true;
                 }
             }
@@ -131,13 +131,13 @@ session_start();
                             </div>
                             <div class="mb-3">
                                 <tr>
-                                    <td><label for="passwort">Passwort:</label></td>
+                                    <td><label for="passwort">Password:</label></td>
                                     <td><input type="password" id="passwort" name="passwort" placeholder="Passwort eingeben" required></td>
                                 <tr>
                             </div>
                         </table>
                         <div>
-                            <p class="mt-5">Noch kein Konto? Dann klicke <a href="registrieren.php">hier</a></p>
+                            <p class="mt-5">No account yet? Then click <a href="registrieren.php">here</a></p>
                         </div>
                         <input type="submit" value="Login" name="login" class="button">
                     </form>
