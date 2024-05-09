@@ -17,6 +17,11 @@ session_start();
 
     <link href="layout.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
 
     <title>DreamBeachtRetreat</title>
 </head>
@@ -201,12 +206,24 @@ session_start();
             <hr>
             <p>Strand-Retreats befindet sich an malerischen Küstenabschnitten, oft in idyllischen Gegenden.</p>
 
-            <!--Google map-->
-            <div id="map-container-google-1" class="z-depth-1-half map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15776.534046256771!2d115.43973880275996!3d-8.678851361329656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd26da7ddc8bf63%3A0xffd3726dbaf5e2fa!2sDream%20Beach!5e0!3m2!1sde!2sat!4v1708332937313!5m2!1sde!2sat" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!--Map-->
+
+            <div id="meineMap" style="width: 600px; height: 400px; margin-left: 50px;">
+                <script>
+                    const map = L.map('meineMap').setView([35.8669603,10.6106847,21], 15); //[Koordinaten], Zoomfaktor
+
+                    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                        attribution: '&copy; DreamBeachRetreat'
+                    }).addTo(map);
+
+                    const marker = L.marker([35.8669603,10.6106847,21]).addTo(map)
+                        .bindPopup('<img src="images/aussen.jpg" height="150" width="225"><h2 style="text-align:center">Dream Beach</h2>')
+                        .openPopup();
+                </script>
             </div>
 
-            <!--Google Maps-->
+            <!--Map-->
         </div>
 
         <div class="hintergrund">
