@@ -1,6 +1,6 @@
 <?php
     $ausgabe = "
-        <h1>Impressum:</h1>
+        <h1>Imprint:</h1>
 
         Dream Beach Retreat <br>
         Strandstraße 1 <br>
@@ -8,7 +8,7 @@
 
         Telefon: +49 123 456789<br>
         E-Mail: info@dreambeachretreat.com <br>
-        Vertreten durch: Max Mustermann<br><br>
+        Represented by: Liam Jones<br><br>
 
         <h1>Terms and Conditions:</h1>
 
